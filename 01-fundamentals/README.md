@@ -43,6 +43,47 @@ Find the Content Useful? [You can always buy me a coffee](https://www.buymeacoff
 - create src folder
   - create index.js inside src
 
-```js
+#### First Component
 
+- toggle sidebar CMD + B
+- shortcuts settings/keyboard shortcuts
+
+```js
+function Greeting() {
+  return <h2>My First Component</h2>
+}
+const Greeting = () => {
+  return <h2>My First Component</h2>
+}
+```
+
+- starts with capital letter
+- must return JSX (html)
+
+##### Typical Component
+
+```js
+// imports or logic
+
+const Greeting = () => {
+  return <h2>My First Component</h2>
+}
+export default Greeting
+```
+
+##### Root Component (only one)
+
+index.js
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+function Greeting() {
+  return <h2>My First Component</h2>
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<Greeting />)
 ```
