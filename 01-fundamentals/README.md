@@ -218,7 +218,7 @@ return <input />
 ```js
 function Greeting() {
   return (
-    <div>
+    <>
       <div className='someValue'>
         <h3>hello people</h3>
         <ul>
@@ -228,9 +228,8 @@ function Greeting() {
         </ul>
       </div>
       <h2>hello world</h2>
-      <img src='' alt='' />
       <input type='text' name='' id='' />
-    </div>
+    </>
   )
 }
 ```
