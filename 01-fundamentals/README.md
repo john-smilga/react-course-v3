@@ -8,8 +8,6 @@
 
 Find the Content Useful? [You can always buy me a coffee](https://www.buymeacoffee.com/johnsmilga)
 
-- zoom 175%
-
 #### Folder Structure
 
 - node_modules
@@ -37,16 +35,19 @@ Find the Content Useful? [You can always buy me a coffee](https://www.buymeacoff
 - README
   The markdown file where you can share more info about the project for example build instructions and summary
 
+- zoom 175%
+
 #### Remove Boilerplate
 
 - remove src folder
 - create src folder
-  - create index.js inside src
 
-#### First Component
+  - create index.js inside src
 
 - toggle sidebar CMD + B
 - shortcuts settings/keyboard shortcuts
+
+#### First Component
 
 ```js
 function Greeting() {
@@ -208,7 +209,7 @@ return <div className='someValue'>hello</div>
 ```js
 return <img />
 // or
-return <img></img>
+return <input />
 ```
 
 - formatting
