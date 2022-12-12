@@ -383,6 +383,7 @@ const Book = () => {
 }
 .book h2 {
   margin-top: 1rem;
+  font-size: 1rem;
 }
 ```
 
@@ -419,7 +420,7 @@ const Image = () => (
 
 ```js
 const Author = () => (
-  <h4 style={{ color: '#617d98', fontSize: '1.25rem', marginTop: '0.5rem' }}>
+  <h4 style={{ color: '#617d98', fontSize: '0.75', marginTop: '0.5rem' }}>
     Jordan Moore
   </h4>
 );
@@ -446,7 +447,7 @@ const Author = () => (
 const Author = () => {
   const inlineHeadingStyles = {
     color: '#617d98',
-    fontSize: '1.25rem',
+    fontSize: '0.75rem',
     marginTop: '0.5rem',
   };
   return <h4 style={inlineHeadingStyles}>Jordan Moore </h4>;
@@ -479,7 +480,7 @@ const Book = () => {
 ```css
 .book h4 {
   color: #617d98;
-  font-size: 1.25rem;
+  font-size: 0.75rem;
   margin-top: 0.5rem;
   letter-spacing: 2px;
 }
@@ -1456,3 +1457,46 @@ export const books = [
   },
 ];
 ```
+
+#### Add Title
+
+- add a title to our app (css optional)
+- change page title
+
+index.js
+
+```js
+function BookList() {
+  return (
+    <>
+      <h1>amazon best sellers</h1>
+      <section className='booklist'>
+        {books.map((book) => {
+          return <Book {...book} key={book.id} />;
+        })}
+      </section>
+    </>
+  );
+}
+```
+
+index.css
+
+```css
+h1 {
+  text-align: center;
+  margin-top: 4rem;
+  text-transform: capitalize;
+}
+```
+
+public/index.html
+
+```html
+<title>Best Sellers</title>
+```
+
+#### Build Production Application
+
+- stop the dev server "ctrl + c"
+- run "npm run build"
