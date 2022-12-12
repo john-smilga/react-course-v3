@@ -419,7 +419,7 @@ const Image = () => (
 
 ```js
 const Author = () => (
-  <h4 style={{ color: '#617d98', fontSize: '1.25rem', marginTop: '0.75rem' }}>
+  <h4 style={{ color: '#617d98', fontSize: '1.25rem', marginTop: '0.5rem' }}>
     Jordan Moore
   </h4>
 );
@@ -447,7 +447,7 @@ const Author = () => {
   const inlineHeadingStyles = {
     color: '#617d98',
     fontSize: '1.25rem',
-    marginTop: '0.75rem',
+    marginTop: '0.5rem',
   };
   return <h4 style={inlineHeadingStyles}>Jordan Moore </h4>;
 };
@@ -480,7 +480,7 @@ const Book = () => {
 .book h4 {
   color: #617d98;
   font-size: 1.25rem;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   letter-spacing: 2px;
 }
 ```
@@ -667,9 +667,6 @@ const Book = (props) => {
 - Destructuring (object)
   [JS Nuggets - Destructuring (object)](https://www.youtube.com/watch?v=i4vhNKihfto&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=8&t=1s)
 
-- Spread Operator
-- [JS Nuggets - Spread Operator](https://www.youtube.com/watch?v=4Zyr5a3m0Fc&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=10)
-
 - destructuring in Vanilla JS
 - saves time/typing
 - pull out the properties
@@ -718,77 +715,6 @@ const Book = ({ img, title, author }) => {
 };
 ```
 
-#### Mind Grenade
-
-```js
-function BookList() {
-  return (
-    <section className='booklist'>
-      <Book book={firstBook} />
-      <Book book={secondBook} />
-    </section>
-  );
-}
-
-const Book = (props) => {
-  console.log(props);
-  // props.book.img
-  // const {img,title,author} = props.book
-  // ({book:{img,title,author}})
-  return (
-    <article className='book'>
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <h4>{author} </h4>
-    </article>
-  );
-};
-```
-
-#### Personal Favorite
-
-- my person favorite
-- utilize spread operator (...) - copy values
-
-```js
-const friends = ['john', 'peter', 'anna'];
-const newFriends = [...friends, 'susan'];
-console.log(friends);
-console.log(newFriends);
-const someObject = {
-  name: 'john',
-  job: 'developer',
-};
-// COPY NOT A REFERENCE !!!!
-const newObject = { ...someObject, location: 'florida' };
-console.log(someObject);
-console.log(newObject);
-```
-
-```js
-function BookList() {
-  return (
-    <section className='booklist'>
-      <Book {...firstBook} />
-      <Book {...secondBook} />
-    </section>
-  );
-}
-
-const Book = ({ img, title, author }) => {
-  // props.img
-  // const {img,title,author} = props
-  // ({img,title,author})
-  return (
-    <article className='book'>
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <h4>{author} </h4>
-    </article>
-  );
-};
-```
-
 #### Children Prop
 
 - everything we render between component tags
@@ -800,14 +726,22 @@ const Book = ({ img, title, author }) => {
 function BookList() {
   return (
     <section className='booklist'>
-      <Book {...firstBook}>
+      <Book
+        author={firstBook.author}
+        title={firstBook.title}
+        img={firstBook.img}
+      >
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque
           repudiandae inventore eos qui animi sed iusto alias eius ea sapiente.
         </p>
         <button>click me</button>
       </Book>
-      <Book {...secondBook} />
+      <Book
+        author={secondBook.author}
+        title={secondBook.title}
+        img={secondBook.img}
+      />
     </section>
   );
 }
@@ -900,4 +834,625 @@ const newNames = names.map((name) => {
 function BookList() {
   return <section className='booklist'>{newNames}</section>;
 }
+```
+
+#### Proper List
+
+- remove names and newNames
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        console.log(book);
+
+        // return 'hello';
+        return (
+          <div>
+            <h2>{book.title}</h2>
+          </div>
+        );
+      })}
+    </section>
+  );
+}
+```
+
+- render component
+- pass properties one by one
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        console.log(book);
+        const { img, title, author } = book;
+        return <Book img={img} />;
+      })}
+    </section>
+  );
+}
+```
+
+- render component
+- pass entire object
+- Destructuring (object)
+  [JS Nuggets - Destructuring (object)](https://www.youtube.com/watch?v=i4vhNKihfto&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=8&t=1s)
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        console.log(book);
+        const { img, title, author } = book;
+        return <Book book={book} />;
+      })}
+    </section>
+  );
+}
+
+const Book = (props) => {
+  const { img, title, author } = props.book;
+
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+- alternative
+
+```js
+const Book = ({ book: { img, title, author } }) => {
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+#### Key Prop
+
+- typically it's going to be id
+
+```js
+const books = [
+  {
+    author: 'Jordan Moore',
+    title: 'Interesting Facts For Curious Minds',
+    img: './images/book-1.jpg',
+    id: 1,
+  },
+  {
+    author: 'James Clear',
+    title: 'Atomic Habits',
+    img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+    id: 2,
+  },
+];
+
+function BookList() {
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        console.log(book);
+        const { img, title, author, id } = book;
+        return <Book book={book} key={id} />;
+      })}
+    </section>
+  );
+}
+```
+
+- you will see index,but it's not advised if the list is changing
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      {books.map((book, index) => {
+        console.log(book);
+        const { img, title, author, id } = book;
+        return <Book book={book} key={index} />;
+      })}
+    </section>
+  );
+}
+```
+
+#### My Personal Preference
+
+- utilize spread operator (...) - copy values
+- Spread Operator
+- [JS Nuggets - Spread Operator](https://www.youtube.com/watch?v=4Zyr5a3m0Fc&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=10)
+
+```js
+const friends = ['john', 'peter', 'anna'];
+const newFriends = [...friends, 'susan'];
+console.log(friends);
+console.log(newFriends);
+const someObject = {
+  name: 'john',
+  job: 'developer',
+};
+// COPY NOT A REFERENCE !!!!
+const newObject = { ...someObject, location: 'florida' };
+console.log(someObject);
+console.log(newObject);
+```
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        return <Book {...book} key={book.id} />;
+      })}
+    </section>
+  );
+}
+
+const Book = (props) => {
+  const { img, title, author } = props;
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+const Book = ({ img, title, author }) => {
+  // rest of the code
+};
+```
+
+#### Events - Fundamentals
+
+- Vanilla JS
+
+```js
+const btn = document.getElementById('btn');
+
+btn.addEventListener('click', function (e) {
+  // access event object
+  // do something when event fires
+});
+```
+
+- similar approach
+- element, event, function
+- again camelCase
+
+```js
+const EventExamples = () => {
+  const handleButtonClick = () => {
+    alert('handle button click');
+  };
+  return (
+    <section>
+      <button onClick={handleButtonClick}>click me</button>
+    </section>
+  );
+};
+```
+
+- [React Events](https://reactjs.org/docs/events.html)
+- no need to memorize them(idea is the same)
+- most common
+  - onClick (click events)
+  - onSubmit (submit form )
+  - onChange (input change )
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      <EventExamples />
+      {books.map((book) => {
+        return <Book {...book} key={book.id} />;
+      })}
+    </section>
+  );
+}
+
+const EventExamples = () => {
+  const handleFormInput = () => {
+    console.log('handle form input');
+  };
+  const handleButtonClick = () => {
+    alert('handle button click');
+  };
+  return (
+    <section>
+      <form>
+        <h2>Typical Form</h2>
+        <input
+          type='text'
+          name='example'
+          onChange={handleFormInput}
+          style={{ margin: '1rem 0' }}
+        />
+      </form>
+      <button onClick={handleButtonClick}>click me</button>
+    </section>
+  );
+};
+```
+
+#### Event Object and Form Submission
+
+```js
+const EventExamples = () => {
+  const handleFormInput = (e) => {
+    console.log(e);
+    // e.target - element
+    console.log(`Input Name : ${e.target.name}`);
+    console.log(`Input Value : ${e.target.value}`);
+    // console.log('handle form input');
+  };
+  const handleButtonClick = () => {
+    alert('handle button click');
+  };
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
+    console.log('form submitted');
+  };
+  return (
+    <section>
+      {/* add onSubmit Event Handler */}
+      <form onSubmit={handleFormSubmission}>
+        <h2>Typical Form</h2>
+        <input
+          type='text'
+          name='example'
+          onChange={handleFormInput}
+          style={{ margin: '1rem 0' }}
+        />
+        {/* add button with type='submit' */}
+        <button type='submit' onClick={handleFormSubmission}>
+          submit form
+        </button>
+      </form>
+      <button onClick={handleButtonClick}>click me</button>
+    </section>
+  );
+};
+```
+
+- alternative approach
+
+```js
+<button type='submit' onClick={handleFormSubmission}>
+  submit form
+</button>
+```
+
+#### Mind Grenade
+
+- alternative approach
+- pass anonymous function (in this case arrow function)
+- one liner - less code
+
+```js
+const EventExamples = () => {
+  return (
+    <section>
+      <button onClick={() => console.log('hello there')}>click me</button>
+    </section>
+  );
+};
+```
+
+- also can access event object
+
+```js
+const EventExamples = () => {
+  return (
+    <section>
+      <form>
+        <h2>Typical Form</h2>
+        <input
+          type='text'
+          name='example'
+          onChange={(e) => console.log(e.target.value)}
+          style={{ margin: '1rem 0' }}
+        />
+      </form>
+      <button onClick={() => console.log('you clicked me')}>click me</button>
+    </section>
+  );
+};
+```
+
+#### Mind Grenade
+
+- remove EventsExamples
+- components are independent by default
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        return <Book {...book} key={book.id} />;
+      })}
+    </section>
+  );
+}
+
+const Book = (props) => {
+  const { img, title, author } = props;
+  const displayTitle = () => {
+    console.log(title);
+  };
+
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <button onClick={displayTitle}>display title</button>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+- remove button
+
+#### Prop Drilling
+
+- react data flow - can only pass props down
+
+```js
+function BookList() {
+  const someValue = 'shakeAndBake';
+  const displayValue = () => {
+    console.log(someValue);
+  };
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        return <Book {...book} key={book.id} displayValue={displayValue} />;
+      })}
+    </section>
+  );
+}
+
+const Book = (props) => {
+  const { img, title, author, displayValue } = props;
+
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <button onClick={displayValue}>click me</button>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+#### More Complex Example
+
+```js
+function BookList() {
+  const someValue = 'shakeAndBake';
+  const displayValue = (title) => {
+    console.log(`${title} book is ${someValue}`);
+  };
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        return <Book {...book} key={book.id} displayValue={displayValue} />;
+      })}
+    </section>
+  );
+}
+
+const Book = (props) => {
+  const { img, title, author, displayValue } = props;
+
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      {/* not going to work !!! */}
+      <button onClick={displayValue(title)}>click me</button>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+- fix - setup a wrapper
+- first option
+
+```js
+const Book = (props) => {
+  const { img, title, author, displayValue } = props;
+
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      {/* first option  */}
+      <button onClick={() => displayValue(title)}>click me</button>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+```js
+const Book = (props) => {
+  const { img, title, author, displayValue } = props;
+
+  const displayParentValue = () => {
+    displayValue(title);
+  };
+
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      {/* second option  */}
+      <button onClick={displayParentValue}>click me</button>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+#### Import and Export Statements
+
+- remove all displayValue code
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        return <Book {...book} key={book.id} />;
+      })}
+    </section>
+  );
+}
+
+const Book = (props) => {
+  const { img, title, author } = props;
+
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+- setup two files in src books.js and Book.js
+- cut books array from index.js
+- add to books.js
+
+books.js
+
+```js
+const books = [
+  {
+    author: 'Jordan Moore',
+    title: 'Interesting Facts For Curious Minds',
+    img: './images/book-1.jpg',
+    id: 1,
+  },
+  {
+    author: 'James Clear',
+    title: 'Atomic Habits',
+    img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+    id: 2,
+  },
+];
+```
+
+- two flavors named and default exports
+
+  - with named exports names MUST match
+  - with default exports,can rename but only one per file
+
+- named export
+
+```js
+export const books = [
+  {
+    author: 'Jordan Moore',
+    title: 'Interesting Facts For Curious Minds',
+    img: './images/book-1.jpg',
+    id: 1,
+  },
+  {
+    author: 'James Clear',
+    title: 'Atomic Habits',
+    img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+    id: 2,
+  },
+];
+```
+
+index.js
+
+```js
+import { books } from './books';
+```
+
+- default export
+
+```js
+const Book = (props) => {
+  const { img, title, author } = props;
+
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+
+      <h4>{author} </h4>
+    </article>
+  );
+};
+
+export default Book;
+```
+
+index.js
+
+```js
+import Book from './Book';
+```
+
+#### Local Images (src folder)
+
+- better performance since optimized
+- add one more book to array
+- download all three images (rename)
+- setup images folder in the src
+- import all three images in the books.js
+- set image property equal to import
+- and yes each image requires new import
+
+```js
+import img1 from './images/book-1.jpg';
+import img2 from './images/book-2.jpg';
+import img3 from './images/book-3.jpg';
+export const books = [
+  {
+    author: 'Jordan Moore',
+    title: 'Interesting Facts For Curious Minds',
+    img: img1,
+    id: 1,
+  },
+  {
+    author: 'James Clear',
+    title: 'Atomic Habits',
+    img: img2,
+    id: 2,
+  },
+  {
+    author: 'Stephen King',
+    title: 'Fairy Tale',
+    img: img3,
+    id: 3,
+  },
+];
 ```
