@@ -510,3 +510,104 @@ const Book = () => {
 ```
 
 - toggle line comment Edit/Toggle Line Comment
+
+#### Props
+
+- refactor/clean up
+
+```js
+const author = 'Jordan Moore';
+const title = 'Interesting Facts For Curious Minds';
+const img = './images/book-1.jpg';
+
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book />
+      <Book />
+    </section>
+  );
+}
+const Book = () => {
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+```js
+// parameters
+const someFunc = (param1, param2) => {
+  console.log(param1, param2);
+};
+// arguments
+someFunc('job', 'developer');
+```
+
+```js
+const Book = (props) => {
+  console.log(props);
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
+      {console.log(props)}
+    </article>
+  );
+};
+```
+
+- props object, convention to call props, 'shakeAndBake' is an excellent alternative
+
+- pass as key/value pairs
+- if the prop exists it will return value, otherwise no value
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book job='developer' />
+      <Book title='random title' number={22} />
+    </section>
+  );
+}
+const Book = (props) => {
+  console.log(props);
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
+      <p>{props.job}</p>
+      <p>{props.title}</p>
+      <p>{props.number}</p>
+    </article>
+  );
+};
+```
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book author={author} title={title} img={img} />
+      <Book title={title} img={img} />
+    </section>
+  );
+}
+const Book = (props) => {
+  console.log(props);
+  return (
+    <article className='book'>
+      <img src={props.img} alt={props.title} />
+      <h2>{props.title}</h2>
+      <h4>{props.author} </h4>
+    </article>
+  );
+};
+```
