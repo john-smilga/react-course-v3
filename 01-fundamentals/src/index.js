@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-import './index.css'
+import './index.css';
 
 function BookList() {
   return (
@@ -11,34 +11,26 @@ function BookList() {
       <Book />
       <Book />
     </section>
-  )
+  );
 }
-
+const author = 'Jordan Moore';
 const Book = () => {
+  const title = 'Interesting Facts For Curious Mindssssss';
   return (
     <article className='book'>
-      <Image />
-      <Title />
-      <Author />
+      <img
+        src='./images/book-1.jpg'
+        alt='Interesting Facts For Curious Minds'
+      />
+      <h2>{title}</h2>
+
+      <h4>{author.toUpperCase()} </h4>
+      {/* <p>{let x = 6}</p> */}
+      <p>{6 + 6}</p>
     </article>
-  )
-}
+  );
+};
 
-const Image = () => (
-  <img src='./images/book-1.jpg' alt='Interesting Facts For Curious Minds' />
-)
-const Title = () => {
-  return <h2>Interesting Facts For Curious Minds</h2>
-}
-const Author = () => {
-  const inlineHeadingStyles = {
-    color: '#617d98',
-    fontSize: '1.25rem',
-    marginTop: '0.75rem',
-  }
-  return <h4 style={inlineHeadingStyles}>Jordan Moore </h4>
-}
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
-
-root.render(<BookList />)
+root.render(<BookList />);

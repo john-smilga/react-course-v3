@@ -39,8 +39,8 @@ body {
 }
 
 .book h4 {
-  /* won't work */
-  color: red;
-  /* will work */
+  color: #617d98;
+  font-size: 1.25rem;
+  margin-top: 0.75rem;
   letter-spacing: 2px;
 }
