@@ -1500,3 +1500,4 @@ public/index.html
 
 - stop the dev server "ctrl + c"
 - run "npm run build"
+- build folder gets created
