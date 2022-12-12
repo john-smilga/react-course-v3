@@ -3,25 +3,35 @@ import ReactDOM from 'react-dom/client';
 
 import './index.css';
 
-const author = 'Jordan Moore';
-const title = 'Interesting Facts For Curious Minds';
-const img = './images/book-1.jpg';
+const firstBook = {
+  author: 'Jordan Moore',
+  title: 'Interesting Facts For Curious Minds',
+  img: './images/book-1.jpg',
+};
+const secondBook = {
+  author: 'James Clear',
+  title: 'Atomic Habits',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+};
 
 function BookList() {
   return (
     <section className='booklist'>
-      <Book author={author} title={title} img={img} />
-      <Book title={title} img={img} />
+      <Book {...firstBook} />
+      <Book {...secondBook} />
     </section>
   );
 }
-const Book = (props) => {
-  console.log(props);
+
+const Book = ({ img, title, author }) => {
+  // props.img
+  // const {img,title,author} = props
+  // ({img,title,author})
   return (
     <article className='book'>
-      <img src={props.img} alt={props.title} />
-      <h2>{props.title}</h2>
-      <h4>{props.author} </h4>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
     </article>
   );
 };

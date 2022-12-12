@@ -511,7 +511,7 @@ const Book = () => {
 
 - toggle line comment Edit/Toggle Line Comment
 
-#### Props
+#### Props - Initial Setup
 
 - refactor/clean up
 
@@ -607,6 +607,183 @@ const Book = (props) => {
       <img src={props.img} alt={props.title} />
       <h2>{props.title}</h2>
       <h4>{props.author} </h4>
+    </article>
+  );
+};
+```
+
+#### Props - Somewhat Dynamic Setup
+
+- setup an object
+- refactor vars to properties
+- copy/paste and rename
+- get values for second book
+- setup props
+
+```js
+const firstBook = {
+  author: 'Jordan Moore',
+  title: 'Interesting Facts For Curious Minds',
+  img: './images/book-1.jpg',
+};
+const secondBook = {
+  author: 'James Clear',
+  title: 'Atomic Habits',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+};
+
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book
+        author={firstBook.author}
+        title={firstBook.title}
+        img={firstBook.img}
+      />
+      <Book
+        author={secondBook.author}
+        title={secondBook.title}
+        img={secondBook.img}
+      />
+    </section>
+  );
+}
+const Book = (props) => {
+  console.log(props);
+  return (
+    <article className='book'>
+      <img src={props.img} alt={props.title} />
+      <h2>{props.title}</h2>
+      <h4>{props.author} </h4>
+    </article>
+  );
+};
+```
+
+#### Access Props - Multiple Approaches
+
+- there is no right or wrong - again preference !!!
+
+- Destructuring (object)
+  [JS Nuggets - Destructuring (object)](https://www.youtube.com/watch?v=i4vhNKihfto&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=8&t=1s)
+
+- Spread Operator
+- [JS Nuggets - Spread Operator](https://www.youtube.com/watch?v=4Zyr5a3m0Fc&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=10)
+
+- destructuring in Vanilla JS
+- saves time/typing
+- pull out the properties
+- don't need to reference object anymore
+
+```js
+const someObject = {
+  name: 'john',
+  job: 'developer',
+  location: 'florida',
+};
+
+console.log(someObject.name);
+const { name, job } = someObject;
+console.log(job);
+```
+
+- no need for all the props.propName
+- destructure inside component
+
+```js
+const Book = (props) => {
+  const { img, title, author } = props;
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+- destructure in function parameters (in our case props)
+- if you have console.log(props) - it won't be defined
+
+```js
+const Book = ({ img, title, author }) => {
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+#### Mind Grenade
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book book={firstBook} />
+      <Book book={secondBook} />
+    </section>
+  );
+}
+
+const Book = (props) => {
+  console.log(props);
+  // props.book.img
+  // const {img,title,author} = props.book
+  // ({book:{img,title,author}})
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
+    </article>
+  );
+};
+```
+
+#### Personal Favorite
+
+- my person favorite
+- utilize spread operator (...) - copy values
+
+```js
+const friends = ['john', 'peter', 'anna'];
+const newFriends = [...friends, 'susan'];
+console.log(friends);
+console.log(newFriends);
+const someObject = {
+  name: 'john',
+  job: 'developer',
+};
+// COPY NOT A REFERENCE !!!!
+const newObject = { ...someObject, location: 'florida' };
+console.log(someObject);
+console.log(newObject);
+```
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book {...firstBook} />
+      <Book {...secondBook} />
+    </section>
+  );
+}
+
+const Book = ({ img, title, author }) => {
+  // props.img
+  // const {img,title,author} = props
+  // ({img,title,author})
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
     </article>
   );
 };
