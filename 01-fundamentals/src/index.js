@@ -17,21 +17,27 @@ const secondBook = {
 function BookList() {
   return (
     <section className='booklist'>
-      <Book {...firstBook} />
+      <Book {...firstBook}>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque
+          repudiandae inventore eos qui animi sed iusto alias eius ea sapiente.
+        </p>
+        <button>click me</button>
+      </Book>
       <Book {...secondBook} />
     </section>
   );
 }
 
-const Book = ({ img, title, author }) => {
-  // props.img
-  // const {img,title,author} = props
-  // ({img,title,author})
+const Book = (props) => {
+  const { img, title, author, children } = props;
+  console.log(props);
   return (
     <article className='book'>
       <img src={img} alt={title} />
       <h2>{title}</h2>
       <h4>{author} </h4>
+      {children}
     </article>
   );
 };
