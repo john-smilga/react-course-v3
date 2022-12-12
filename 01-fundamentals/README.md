@@ -257,3 +257,132 @@ const Message = () => {
 - top right corner
 - more tools/extensions
 - open chrome web store
+
+#### Book List
+
+- in search engine type - 'amazon best selling books'
+  [Amazon Best Sellers](https://www.amazon.com/Best-Sellers-Books/zgbs/books/)
+
+- choose a book
+- copy image, title and author
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+import './index.css'
+
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  )
+}
+
+const Book = () => {
+  return (
+    <article className='book'>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  )
+}
+
+const Image = () => (
+  <img
+    src='https://images-na.ssl-images-amazon.com/images/I/71m+Qtq+HrL._AC_UL900_SR900,600_.jpg'
+    alt='Interesting Facts For Curious Minds'
+  />
+)
+const Title = () => {
+  return <h2>Interesting Facts For Curious Minds</h2>
+}
+const Author = () => <h4>Jordan Moore </h4>
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<BookList />)
+```
+
+#### CSS
+
+- create index.css in src
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #f1f5f8;
+  color: #222;
+}
+```
+
+- import file and add classes
+
+```js
+import './index.css'
+
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  )
+}
+
+const Book = () => {
+  return (
+    <article className='book'>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  )
+}
+```
+
+- complete css
+
+```css
+.booklist {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .booklist {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.book {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+.book img {
+  width: 100%;
+  object-fit: cover;
+}
+.book h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+```
