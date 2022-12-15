@@ -963,6 +963,8 @@ function BookList() {
 }
 ```
 
+#### Pass The Entire Object
+
 - render component
 - pass entire object
 - Destructuring (object)
