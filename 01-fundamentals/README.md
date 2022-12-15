@@ -1510,6 +1510,65 @@ export const books = [
 ];
 ```
 
+#### Challenges
+
+- setup numbers
+- don't worry about css
+- hint - index (second parameter in map)
+
+index.js
+
+```js
+const BookList = () => {
+  return (
+    <section className='booklist'>
+      {books.map((book, index) => {
+        return <Book {...book} key={book.id} number={index} />;
+      })}
+    </section>
+  );
+};
+
+const Book = (props) => {
+  const { img, title, author, number } = props;
+
+  return (
+    <article className='book'>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+
+      <h4>{author}</h4>
+      <span className='number'>{`# ${number + 1}`}</span>
+    </article>
+  );
+};
+```
+
+index.css
+
+```css
+.book {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  /* set relative */
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #c35600;
+  color: #fff;
+}
+```
+
 #### Add Title
 
 - add a title to our app (css optional)
