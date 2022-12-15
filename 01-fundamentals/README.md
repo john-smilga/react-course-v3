@@ -1160,9 +1160,7 @@ const EventExamples = () => {
           style={{ margin: '1rem 0' }}
         />
         {/* add button with type='submit' */}
-        <button type='submit' onClick={handleFormSubmission}>
-          submit form
-        </button>
+        <button type='submit'>submit form</button>
       </form>
       <button onClick={handleButtonClick}>click me</button>
     </section>
