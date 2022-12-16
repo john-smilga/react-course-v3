@@ -1251,6 +1251,7 @@ const Book = (props) => {
 #### Prop Drilling
 
 - react data flow - can only pass props down
+- alternatives Context API, redux, other state libraries
 
 ```js
 function BookList() {
@@ -1476,7 +1477,7 @@ import Book from './Book';
 
 #### Local Images (src folder)
 
-- better performance since optimized
+- better performance because optimized
 - add one more book to array
 - download all three images (rename)
 - setup images folder in the src
@@ -1488,6 +1489,7 @@ import Book from './Book';
 import img1 from './images/book-1.jpg';
 import img2 from './images/book-2.jpg';
 import img3 from './images/book-3.jpg';
+
 export const books = [
   {
     author: 'Jordan Moore',
