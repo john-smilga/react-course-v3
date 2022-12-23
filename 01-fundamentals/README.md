@@ -167,7 +167,7 @@ const Greeting = () => {
 
 #### JSX Rules
 
-- return single element
+- return single element (one parent element)
 
   - semantics section/article
   - Fragment - let's us group elements without adding extra nodes
