@@ -35,32 +35,32 @@ npm start
 - index.js
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
 // styles (typically global)
-import './index.css';
+import './index.css'
 
 // convention to name it App and setup in a separate file
-import App from './App';
+import App from './App'
 // import report web vitals
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'
 
 // StrictMode
 
 // StrictMode is a tool for highlighting potential problems in an application.Activates additional checks and warnings for its descendants.Runs only in Development, does not impact the production build. RENDERS TWICE !!! Possible to remove.
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals()
 ```
 
 - remove in src
@@ -75,10 +75,10 @@ App.js
 
 ```js
 function App() {
-  return <h1>backroads app</h1>;
+  return <h1>backroads app</h1>
 }
 
-export default App;
+export default App
 ```
 
 - remove
@@ -116,6 +116,7 @@ export default App;
   - fix the comment bug (remove or comment out)
   - don't worry about - Using target="\_blank" without rel="noreferrer" warning,
     will fix it later
+  - move README.md from final to current project
 
 #### Setup Components
 
@@ -188,8 +189,8 @@ html {
           {link.text}
         </a>
       </li>
-    );
-  });
+    )
+  })
 }
 ```
 
@@ -201,15 +202,15 @@ html {
 ```js
 {
   socialLinks.map((link) => {
-    const { id, href, icon } = link;
+    const { id, href, icon } = link
     return (
       <li key={id}>
         <a href={href} target='_blank' rel='noreferrer' className='nav-icon'>
           <i className={icon}></i>
         </a>
       </li>
-    );
-  });
+    )
+  })
 }
 ```
 
