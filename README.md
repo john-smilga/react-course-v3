@@ -8,4 +8,4 @@ The content is part of my React Course. If you enjoy the content and my teaching
 
 Don't want to enroll in the course, but still find the Content Useful? [You can always buy me a coffee](https://www.buymeacoffee.com/johnsmilga)
 
-## I DO NOT GIVE PERMISSION TO USE COURSE CONTENT, </b>  (INCLUDING PROJECTS) IN SOME OTHER COURSE, OR YOUTUBE VIDEO !!!
+## I DO NOT GIVE PERMISSION TO USE COURSE CONTENT, INCLUDING PROJECTS IN SOME OTHER COURSE, OR YOUTUBE VIDEO !!!
