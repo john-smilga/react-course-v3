@@ -43,7 +43,6 @@ export const tours = [
     date: 'august 26th, 2020',
     title: 'Tibet Adventure',
     info: ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.`,
-    icon: 'fas fa-map',
     location: 'china',
     duration: 6,
     cost: 2100,
@@ -64,7 +63,6 @@ export const tours = [
     date: 'september 15th, 2020',
     title: 'explore hong kong',
     info: ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.`,
-
     location: 'hong kong',
     duration: 8,
     cost: 5000,
@@ -75,7 +73,6 @@ export const tours = [
     date: 'december 5th, 2019',
     title: 'kenya highlights',
     info: ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.`,
-
     location: 'kenya',
     duration: 20,
     cost: 3300,

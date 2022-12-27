@@ -35,32 +35,32 @@ npm start
 - index.js
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
 // styles (typically global)
-import './index.css'
+import './index.css';
 
 // convention to name it App and setup in a separate file
-import App from './App'
+import App from './App';
 // import report web vitals
-import reportWebVitals from './reportWebVitals'
+import reportWebVitals from './reportWebVitals';
 
 // StrictMode
 
 // StrictMode is a tool for highlighting potential problems in an application.Activates additional checks and warnings for its descendants.Runs only in Development, does not impact the production build. RENDERS TWICE !!! Possible to remove.
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-)
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+reportWebVitals();
 ```
 
 - remove in src
@@ -75,10 +75,10 @@ App.js
 
 ```js
 function App() {
-  return <h1>backroads app</h1>
+  return <h1>backroads app</h1>;
 }
 
-export default App
+export default App;
 ```
 
 - remove
@@ -142,6 +142,14 @@ export default App
 - first let's fix the image (logo)
   - setup import from images and update source
 
+```js
+// import
+import logo from '../images/logo.svg';
+
+// JSX
+<img src={logo} className='nav-logo' alt='backroads' />;
+```
+
 #### Smooth Scroll
 
 - html/css feature
@@ -181,6 +189,17 @@ html {
 - export/import iterate over the list,return elements and inject data
 
 ```js
+export const pageLinks = [
+  { id: 1, href: '#home', text: 'home' },
+  { id: 2, href: '#about', text: 'about' },
+  { id: 3, href: '#services', text: 'services' },
+  { id: 4, href: '#tours', text: 'tours' },
+];
+```
+
+```js
+import { pageLinks } from '../data';
+
 {
   pageLinks.map((link) => {
     return (
@@ -189,8 +208,8 @@ html {
           {link.text}
         </a>
       </li>
-    )
-  })
+    );
+  });
 }
 ```
 
@@ -202,15 +221,15 @@ html {
 ```js
 {
   socialLinks.map((link) => {
-    const { id, href, icon } = link
+    const { id, href, icon } = link;
     return (
       <li key={id}>
         <a href={href} target='_blank' rel='noreferrer' className='nav-icon'>
           <i className={icon}></i>
         </a>
       </li>
-    )
-  })
+    );
+  });
 }
 ```
 
@@ -223,10 +242,86 @@ html {
 
 - fix the image (hint - just like with logo in the navbar)
 
+#### Section Title
+
+- in components create Title.js
+- get the structure from one of the sections
+- setup two props
+- replace in About, Services, Tours
+
+```js
+const Title = ({ title, subTitle }) => {
+  return (
+    <div className='section-title'>
+      <h2>
+        {title} <span>{subTitle}</span>
+      </h2>
+    </div>
+  );
+};
+export default Title;
+```
+
+About.js
+
+```js
+// import
+import Title from './Title';
+
+// display
+<Title title='about' subTitle='us' />;
+```
+
 #### Services
 
 - refactor repeating code (hint - just like with page and social links)
   - setup data, export/import, iterate
+
+data.js
+
+```js
+export const services = [
+  {
+    id: 1,
+    icon: 'fas fa-wallet fa-fw',
+    title: 'saving money',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Asperiores, officia',
+  },
+  // rest of the objects
+];
+```
+
+Services.js
+
+```js
+import Title from './Title';
+import { services } from '../data';
+const Services = () => {
+  return (
+    <section className='section services' id='services'>
+      <Title title='our' subTitle='services' />
+
+      <div className='section-center services-center'>
+        {services.map((service) => {
+          const { id, icon, title, text } = service;
+          return (
+            <article className='service' key={id}>
+              <span className='service-icon'>
+                <i className={icon}></i>
+              </span>
+              <div className='service-info'>
+                <h4 className='service-title'>{title}</h4>
+                <p className='service-text'>{text}</p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+export default Services;
+```
 
 #### Tours
 
@@ -238,13 +333,6 @@ html {
 - re-use page and social links
 - in the <span id="date">provide current year (hint - {})
 
-#### Section Title
-
-- in components create Title.js
-- get the structure from one of the sections
-- setup two props
-- replace in About, Services, Tours
-
 #### Alternative Approach
 
 - in components create PageLinks.js
@@ -253,3 +341,53 @@ html {
 - "gotcha"
   - the more "moving parts" you will have the harder it's going to manage
   - my personal preference, if possible just use data
+
+#### Continuous Deployment
+
+- fix warnings (About Section)
+
+- netlify account
+- github account
+- basic git commands :
+
+  - remove existing git repo
+    - Mac : rm -rf .git
+    - Windows : rmdir -Force -Recurse .git
+    - Windows : rd /s /q .git
+      Windows commands were shared by students and I have not personally tested them.
+  - setup new repo
+    - git init
+      create an empty git repository
+    - git add
+      adds new or changed files in your working directory
+      to the Git staging area
+    - git add .
+      adds entire project
+      apart from files/directories specified in .gitignore
+    - git commit -m "first commit"
+      A shortcut command that immediately creates a commit
+      with a passed commit message.
+    - git remote add origin git@github.com:your-profile/repo-name.git
+      git branch -M main
+      git push -u origin main
+
+#### Benefits
+
+- don't need to keep project locally
+- automatic builds
+
+#### Warnings "Gotcha"
+
+- Netlify treats warnings as errors
+
+package.json
+
+```json
+"scripts": {
+    "start": "react-scripts start",
+    "build": "CI= react-scripts build",
+    "local-build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+```
