@@ -377,7 +377,8 @@ export default Services
     - git commit -m "first commit"
       A shortcut command that immediately creates a commit
       with a passed commit message.
-    - git remote add origin git@github.com:your-profile/repo-name.git
+    - push to github
+      git remote add origin git@github.com:your-profile/repo-name.git
       git branch -M main
       git push -u origin main
 
