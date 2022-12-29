@@ -1,5 +1,6 @@
-import { tours } from '../data';
-import Title from './Title';
+import { tours } from '../data'
+import Title from './Title'
+import Tour from './Tour'
 const Tours = () => {
   return (
     <section className='section' id='tours'>
@@ -7,35 +8,10 @@ const Tours = () => {
 
       <div className='section-center featured-center'>
         {tours.map((tour) => {
-          const { id, image, date, title, info, location, duration, cost } =
-            tour;
-          return (
-            <article className='tour-card' key={id}>
-              <div className='tour-img-container'>
-                <img src={image} className='tour-img' alt={title} />
-                <p className='tour-date'>{date}</p>
-              </div>
-              <div className='tour-info'>
-                <div className='tour-title'>
-                  <h4>{title}</h4>
-                </div>
-                <p>{info}</p>
-                <div className='tour-footer'>
-                  <p>
-                    <span>
-                      <i className='fas fa-map'></i>
-                    </span>
-                    {location}
-                  </p>
-                  <p>from ${cost}</p>
-                  <p>{duration} days</p>
-                </div>
-              </div>
-            </article>
-          );
+          return <Tour {...tour} key={tour.id} />
         })}
       </div>
     </section>
-  );
-};
-export default Tours;
+  )
+}
+export default Tours

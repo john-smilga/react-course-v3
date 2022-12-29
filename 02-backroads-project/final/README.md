@@ -35,32 +35,32 @@ npm start
 - index.js
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
 // styles (typically global)
-import './index.css';
+import './index.css'
 
 // convention to name it App and setup in a separate file
-import App from './App';
+import App from './App'
 // import report web vitals
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'
 
 // StrictMode
 
 // StrictMode is a tool for highlighting potential problems in an application.Activates additional checks and warnings for its descendants.Runs only in Development, does not impact the production build. RENDERS TWICE !!! Possible to remove.
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals()
 ```
 
 - remove in src
@@ -75,10 +75,10 @@ App.js
 
 ```js
 function App() {
-  return <h1>backroads app</h1>;
+  return <h1>backroads app</h1>
 }
 
-export default App;
+export default App
 ```
 
 - remove
@@ -144,10 +144,10 @@ export default App;
 
 ```js
 // import
-import logo from '../images/logo.svg';
+import logo from '../images/logo.svg'
 
 // JSX
-<img src={logo} className='nav-logo' alt='backroads' />;
+;<img src={logo} className='nav-logo' alt='backroads' />
 ```
 
 #### Smooth Scroll
@@ -194,11 +194,11 @@ export const pageLinks = [
   { id: 2, href: '#about', text: 'about' },
   { id: 3, href: '#services', text: 'services' },
   { id: 4, href: '#tours', text: 'tours' },
-];
+]
 ```
 
 ```js
-import { pageLinks } from '../data';
+import { pageLinks } from '../data'
 
 {
   pageLinks.map((link) => {
@@ -208,8 +208,8 @@ import { pageLinks } from '../data';
           {link.text}
         </a>
       </li>
-    );
-  });
+    )
+  })
 }
 ```
 
@@ -221,15 +221,15 @@ import { pageLinks } from '../data';
 ```js
 {
   socialLinks.map((link) => {
-    const { id, href, icon } = link;
+    const { id, href, icon } = link
     return (
       <li key={id}>
         <a href={href} target='_blank' rel='noreferrer' className='nav-icon'>
           <i className={icon}></i>
         </a>
       </li>
-    );
-  });
+    )
+  })
 }
 ```
 
@@ -257,19 +257,19 @@ const Title = ({ title, subTitle }) => {
         {title} <span>{subTitle}</span>
       </h2>
     </div>
-  );
-};
-export default Title;
+  )
+}
+export default Title
 ```
 
 About.js
 
 ```js
 // import
-import Title from './Title';
+import Title from './Title'
 
 // display
-<Title title='about' subTitle='us' />;
+;<Title title='about' subTitle='us' />
 ```
 
 #### Services
@@ -288,14 +288,14 @@ export const services = [
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Asperiores, officia',
   },
   // rest of the objects
-];
+]
 ```
 
 Services.js
 
 ```js
-import Title from './Title';
-import { services } from '../data';
+import Title from './Title'
+import { services } from '../data'
 const Services = () => {
   return (
     <section className='section services' id='services'>
@@ -303,7 +303,7 @@ const Services = () => {
 
       <div className='section-center services-center'>
         {services.map((service) => {
-          const { id, icon, title, text } = service;
+          const { id, icon, title, text } = service
           return (
             <article className='service' key={id}>
               <span className='service-icon'>
@@ -314,13 +314,13 @@ const Services = () => {
                 <p className='service-text'>{text}</p>
               </div>
             </article>
-          );
+          )
         })}
       </div>
     </section>
-  );
-};
-export default Services;
+  )
+}
+export default Services
 ```
 
 #### Tours
@@ -339,8 +339,18 @@ export default Services;
 - import pageLinks
 - return the entire list and replace current setup in Navbar, Footer
 - "gotcha"
-  - the more "moving parts" you will have the harder it's going to manage
+  - the more "moving parts" you will have the harder it's going to be to manage
   - my personal preference, if possible just use data
+
+#### Challenge (Optional)
+
+- create more components (essentially, split up the code more)
+- find all map methods and move elements to separate components
+- By the end of the video you should have four additional components
+  - Tour.js
+  - Service.js
+  - SocialLink.js
+  - PageLink.js
 
 #### Continuous Deployment
 
