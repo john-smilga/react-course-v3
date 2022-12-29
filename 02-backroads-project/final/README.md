@@ -333,7 +333,7 @@ export default Services
 - re-use page and social links
 - in the <span id="date">provide current year (hint - {})
 
-#### Alternative Approach
+#### Alternative Approach (optional)
 
 - in components create PageLinks.js
 - import pageLinks
@@ -342,7 +342,7 @@ export default Services
   - the more "moving parts" you will have the harder it's going to be to manage
   - my personal preference, if possible just use data
 
-#### Challenge (Optional)
+#### Challenge (optional)
 
 - create more components (essentially, split up the code more)
 - find all map methods and move elements to separate components
