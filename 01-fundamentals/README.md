@@ -93,6 +93,19 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Greeting />);
 ```
 
+#### Possible Bug
+
+If for some reason you still have this error in the terminal
+
+```
+Module not found: Error: Can't resolve 'path/index.js'
+```
+
+Just restart the server
+
+- CTRL + C (stop the server)
+- "npm start" (start the dev server)
+
 #### Extensions and settings.json
 
 - Auto Rename Tag
