@@ -1622,11 +1622,6 @@ public/index.html
 <title>Best Sellers</title>
 ```
 
-#### Extra Extensions
-
-- Code Spell Checker - checks spelling
-- glean - easy component setup
-
 #### Build Production Application
 
 - stop the dev server "ctrl + c"
