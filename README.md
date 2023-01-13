@@ -12,4 +12,4 @@ The content is part of my React Course. If you enjoy the content and my teaching
 
 Don't want to enroll in the course, but still find the Content Useful? [You can always buy me a coffee](https://www.buymeacoffee.com/johnsmilga)
 
-Or Give This Repo a Star :):):)
+and you can always "star" this repo :)
