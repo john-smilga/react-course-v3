@@ -1697,7 +1697,7 @@ export default App;
 #### Vite Install
 
 ```sh
-npm create vite@latest appName -- --template react
+npm create vite@latest app-name -- --template react
 npm install
 npm run dev
 ```
