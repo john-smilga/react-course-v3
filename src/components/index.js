@@ -1,7 +1,7 @@
 
-export * from '/About'
-export * from '/Hero'
-export * from '/Navbar'
-export * from '/Services'
-export * from '/Tours'
-export * from '/Footer'
+export * from './About.jsx'
+export * from './Hero.jsx'
+export * from './Navbar.jsx'
+export * from './Services.jsx'
+export * from './Tours.jsx'
+export * from './Footer.jsx'
