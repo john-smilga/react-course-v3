@@ -33,7 +33,9 @@ export default App;
 
 #### The Need For State
 
-/tutorial/01-useState/starter/01-error-example.jsx
+```js
+import Starter from './tutorial/01-useState/starter/01-error-example.jsx';
+```
 
 - in App.jsx setup import and container div
 
@@ -69,7 +71,9 @@ export default ErrorExample;
 
 #### useState Basics
 
-/tutorial/01-useState/starter/02-useState-basics.jsx
+```js
+import Starter from './tutorial/01-useState/starter/02-useState-basics.jsx';
+```
 
 [Javascript Nuggets - Destructuring (Array)](https://www.youtube.com/watch?v=qhECs40xMec&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=7&t=9s)
 
@@ -130,7 +134,9 @@ There are a few ways that you can trigger a re-render in a React component:
 
 #### useState with Array
 
-/tutorial/01-useState/starter/03-useState-array.jsx
+```js
+import Starter from './tutorial/01-useState/starter/03-useState-array.jsx';
+```
 
 Setup Challenge :
 
@@ -212,7 +218,9 @@ export default UseStateArray;
 
 #### useState with Object
 
-/tutorial/01-useState/starter/04-useState-object.jsx
+```js
+import Starter from './tutorial/01-useState/starter/04-useState-object.jsx';
+```
 
 Setup Challenge :
 
@@ -299,7 +307,9 @@ export default UseStateObject;
 
 #### Set Function "Gotcha"
 
-/tutorial/01-useState/starter/05-useState-gotcha.jsx
+```js
+import Starter from './tutorial/01-useState/starter/05-useState-gotcha.jsx';
+```
 
 Setup Challenge :
 
@@ -382,7 +392,9 @@ const handleClick = () => {
 
 #### Code Example
 
-/tutorial/02-useEffect/starter/01-code-example.jsx
+```js
+import Starter from './tutorial/02-useEffect/starter/01-code-example.jsx';
+```
 
 ```js
 import { useState } from 'react';
@@ -435,7 +447,9 @@ sayHello();
 
 #### useEffect Basics
 
-/tutorial/02-useEffect/starter/02-useEffect-basics.jsx
+```js
+import Starter from './tutorial/02-useEffect/starter/02-useEffect-basics.jsx';
+```
 
 useEffect is a hook in React that allows you to perform side effects in function components.There is no need for urban dictionary - basically any work outside of the component. Some examples of side effects are: subscriptions, fetching data, directly updating the DOM, event listeners, timers, etc.
 
@@ -479,7 +493,9 @@ export default UseEffectBasics;
 
 #### Multiple Effects
 
-/tutorial/02-useEffect/starter/03-multiple-effects.jsx
+```js
+import Starter from './tutorial/02-useEffect/starter/03-multiple-effects.jsx';
+```
 
 ```js
 import { useState, useEffect } from 'react';
@@ -513,7 +529,9 @@ export default MultipleEffects;
 
 #### Fetch Data
 
-/tutorial/02-useEffect/starter/04-fetch-data.jsx
+```js
+import Starter from './tutorial/02-useEffect/starter/04-fetch-data.jsx';
+```
 
 [Javascript Nuggets - Fetch API](https://www.youtube.com/watch?v=C_VIKzfpRrg&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=18&t=343s)
 
@@ -579,7 +597,9 @@ export default FetchData;
 
 #### Cleanup Function
 
-/tutorial/02-useEffect/starter/05-cleanup-function.jsx
+```js
+import Starter from './tutorial/02-useEffect/starter/05-cleanup-function.jsx';
+```
 
 Will Cover After 03-conditional-rendering
 
@@ -696,7 +716,9 @@ function Example() {
 
 #### Multiple Returns - Basics
 
-/tutorial/03-conditional-rendering/starter/01-multiple-returns-basics.jsx
+```js
+import Starter from './tutorial/03-conditional-rendering/starter/01-multiple-returns-basics.jsx';
+```
 
 Vanilla JS
 
@@ -745,7 +767,9 @@ export default MultipleReturnsBasics;
 
 #### Multiple Returns - Fetch Data
 
-/tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx
+```js
+import Starter from './tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx';
+```
 
 Setup Challenge :
 
@@ -842,7 +866,9 @@ export default MultipleReturnsFetchData;
 
 #### Fetch Errors "Gotcha" (optional)
 
-/tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx
+```js
+import Starter from './tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx';
+```
 
 Unlike for example Axios, by default, the fetch() API does not consider HTTP status codes in the 4xx or 5xx range to be errors. Instead, it considers these status codes to be indicative of a successful request,
 
@@ -865,7 +891,9 @@ setUser(user);
 
 #### Order Matters - Setup
 
-/tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx
+```js
+import Starter from './tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx';
+```
 
 Please don't dismiss this topic. A lot of questions in course Q&A.
 
@@ -961,7 +989,9 @@ useEffect(() => {
 
 #### DON'T CALL HOOKS CONDITIONALLY
 
-/tutorial/03-conditional-rendering/starter/03-hooks-rule.jsx
+```js
+import Starter from './tutorial/03-conditional-rendering/starter/03-hooks-rule.jsx';
+```
 
 ```js
 import { useState, useEffect } from 'react';
@@ -1080,7 +1110,9 @@ In this example, the displayName() function returns the name property of the use
 
 #### Short Circuit Evaluation React - Basics
 
-/tutorial/03-conditional-rendering/starter/04-short-circuit-overview.jsx
+```js
+import Starter from './tutorial/03-conditional-rendering/starter/04-short-circuit-overview.jsx';
+```
 
 Setup Challenge :
 
@@ -1119,7 +1151,9 @@ export default ShortCircuitOverview;
 
 #### Short Circuit Evaluation in React - Common Approaches
 
-/tutorial/03-conditional-rendering/starter/05-short-circuit-examples.jsx
+```js
+import Starter from './tutorial/03-conditional-rendering/starter/05-short-circuit-examples.jsx';
+```
 
 Vanilla JS (Optional)
 The ! operator is a logical operator in JavaScript that negates a boolean value. It is equivalent to the not operator in other programming languages.
@@ -1228,7 +1262,9 @@ Jobster Example
 
 #### Toggle Challenge
 
-/tutorial/03-conditional-rendering/starter/06-toggle-challenge.jsx
+```js
+import Starter from './tutorial/03-conditional-rendering/starter/06-toggle-challenge.jsx';
+```
 
 - create state value (boolean)
 - return a button and a component/element
@@ -1276,7 +1312,9 @@ Improvements
 
 #### User Challenge
 
-/tutorial/03-conditional-rendering/starter/07-user-challenge.jsx
+```js
+import Starter from './tutorial/03-conditional-rendering/starter/07-user-challenge.jsx';
+```
 
 - create state value
   - user - default value null
@@ -1523,7 +1561,9 @@ Now, if the person.name is null or undefined, this code will simply return undef
 
 #### Controlled Inputs - Setup
 
-/tutorial/06-forms/starter/01-controlled-inputs.jsx
+```js
+import Starter from './tutorial/06-forms/starter/01-controlled-inputs.jsx';
+```
 
 Setup (for all form videos)
 
@@ -1555,7 +1595,9 @@ export default ControlledInputs;
 
 #### Controlled Inputs - Complete
 
-/tutorial/06-forms/starter/01-controlled-inputs.jsx
+```js
+import Starter from './tutorial/06-forms/starter/01-controlled-inputs.jsx';
+```
 
 - setup state values
 - add value and onChange to each input
@@ -1616,7 +1658,9 @@ export default ControlledInputs;
 
 #### User Challenge
 
-/tutorial/06-forms/starter/02-user-challenge.jsx
+```js
+import Starter from './tutorial/06-forms/starter/02-user-challenge.jsx';
+```
 
 - setup controlled input (name input)
 - setup onSubmit (for now just placeholder)
@@ -1698,7 +1742,9 @@ export default UserChallenge;
 
 #### Multiple Inputs
 
-/tutorial/06-forms/starter/03-multiple-inputs.jsx
+```js
+import Starter from './tutorial/06-forms/starter/03-multiple-inputs.jsx';
+```
 
 [Javascript Nuggets - Dynamic Object Keys](https://www.youtube.com/watch?v=_qxCYtWm0tw&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=3&t=97s)
 
@@ -1780,7 +1826,9 @@ export default MultipleInputs;
 
 #### Other Inputs
 
-/tutorial/06-forms/starter/04-other-inputs.jsx
+```js
+import Starter from './tutorial/06-forms/starter/04-other-inputs.jsx';
+```
 
 ```js
 import { useState } from 'react';
@@ -1838,9 +1886,11 @@ export default OtherInputs;
 
 #### FormData API
 
-/tutorial/06-forms/starter/05-form-data.jsx
+```js
+import Starter from './tutorial/06-forms/starter/05-form-data.jsx';
+```
 
-[JS Nuggets - FormData API](https://www.youtube.com/playlist?list=PLnHJACx3NwAep5koWkniVHw8PK7dWCO21)
+[JS Nuggets - FormData API](https://youtu.be/5-x4OUM-SP8)
 
 - a great solution when you have bunch of inputs
 - inputs must have name attribute
@@ -1923,7 +1973,9 @@ console.log(obj);
 
 #### useRef
 
-/tutorial/07-useRef/starter/01-useRef-basics.jsx
+```js
+import Starter from './tutorial/07-useRef/starter/01-useRef-basics.jsx';
+```
 
 - DOES NOT TRIGGER RE-RENDER
 - preserves the value between renders
@@ -1993,7 +2045,9 @@ export default UseRefBasics;
 
 #### Custom Hooks
 
-/tutorial/08-custom-hooks/starter/01-toggle.jsx
+```js
+import Starter from './tutorial/08-custom-hooks/starter/01-toggle.jsx';
+```
 
 - same rules as regular hooks
 - simplify component (less code)
@@ -2109,7 +2163,9 @@ export default useFetch;
 
 #### Context API
 
-./tutorial/09-context-api/starter
+```js
+import Starter from './tutorial/09-context-api/starter';
+```
 
 Challenge
 
@@ -2226,7 +2282,9 @@ npm install && npm run dev
 
 #### useReducer
 
-./tutorial/10-useReducer/starter/01-useReducer.jsx
+```js
+import Starter from './tutorial/10-useReducer/starter/01-useReducer.jsx';
+```
 
 - it's the complete file from 03-useState-array
 
@@ -2694,3 +2752,357 @@ export default ReducerBasics;
   - import actions
   - import data
   - export/import reducer
+
+#### Performance
+
+#### Lower State / Push The State Down
+
+```js
+import Starter from './tutorial/11-performance/starter/01-lower-state';
+```
+
+When Component Re-Renders :
+
+- When the component's state or props change, React will re-render the component to reflect these changes.
+
+- When the parent element re-renders, even if the component's state or props have not changed.
+
+- lower state
+
+```js
+import { useState } from 'react';
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <button
+      className='btn'
+      onClick={() => setCount(count + 1)}
+      style={{ marginBottom: '1rem' }}
+    >
+      count {count}
+    </button>
+  );
+};
+export default Counter;
+```
+
+#### Lower State Challenge
+
+```js
+import Starter from './tutorial/11-performance/starter/02-lower-state-challenge';
+```
+
+- fix the re-rendering
+- hint addPerson fix
+
+```js
+import { useState } from 'react';
+
+const Form = ({ addPerson }) => {
+  const [name, setName] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name) {
+      alert('Please Provide Name Value');
+      return;
+    }
+    addPerson(name);
+    setName('');
+  };
+  return (
+    <form className='form' onSubmit={handleSubmit}>
+      <div className='form-row'>
+        <label htmlFor='name' className='form-label'>
+          name
+        </label>
+        <input
+          type='text'
+          name='name'
+          id='name'
+          className='form-input'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <button className='btn btn-block' type='submit'>
+        submit
+      </button>
+    </form>
+  );
+};
+export default Form;
+```
+
+#### React.memo()
+
+```js
+import Starter from './tutorial/11-performance/starter/03-hooks';
+```
+
+React.memo is a higher-order component (HOC) in React that allows you to memoize a component. This means that if the input props to the component have not changed, the memoized component will return the same result from the previous render, instead of re-rendering. This can help improve performance by avoiding unnecessary render cycles.
+
+The React.memo function takes a functional component as its argument and returns a new component that has the same behavior, but with the added optimization of checking if the props have changed. If the props have not changed, the memoized component will return the cached result from the previous render.
+
+Here's an example of using React.memo
+
+```js
+const MyComponent = React.memo(function MyComponent(props) {
+  /* render logic */
+});
+```
+
+React.memo(Component) - returns memoized component
+
+#### Function "Gotcha"
+
+- setup remove person function
+
+```js
+const removePerson = (id) => {
+  const newPeople = people.filter((person) => person.id !== id);
+  setPeople(newPeople);
+};
+```
+
+- pass it down to List and Person
+
+#### UseCallback
+
+The useCallback hook is a hook in React that allows you to memoize a function. It takes two arguments: the first is the function you want to memoize, and the second is an array of dependencies. The hook will return a memoized version of the function that only changes if one of the values in the dependency array changes.
+
+By memoizing the function, you can avoid unnecessary re-renders and improve the performance of your React application. The function will only be re-created if one of its dependencies changes, otherwise the same instance of the function will be returned. This can be useful in situations where you have an expensive function that you only want to recompute when its dependencies change.
+
+Here is an example of how you might use useCallback:
+
+```js
+import React, { useCallback, useState } from 'react';
+
+function MyComponent() {
+  const [data, setData] = useState([]);
+  const handleClick = useCallback(() => {
+    console.log(data);
+  }, [data]);
+
+  return (
+    <div>
+      <button onClick={handleClick}>Click me</button>
+    </div>
+  );
+}
+```
+
+In this example, the handleClick function is memoized using useCallback and the data prop is passed as a dependency. This means that the handleClick function will only be re-created if the data prop changes.
+
+#### useCallback - Common Use Case
+
+```js
+import Final from './tutorial/02-useEffect/final/04-fetch-data';
+```
+
+```js
+import { useState, useEffect, useCallback } from 'react';
+const url = 'https://api.github.com/users';
+
+const FetchData = () => {
+  const [users, setUsers] = useState([]);
+  const fetchData = useCallback(async () => {
+    try {
+      const response = await fetch(url);
+      const users = await response.json();
+      setUsers(users);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+  // rest of the logic
+};
+```
+
+#### useMemo
+
+The useMemo hook is a hook in React that allows you to memoize a value. It takes two arguments: the first is a function that returns the value you want to memoize, and the second is an array of dependencies. The hook will return the memoized value that will only change if one of the values in the dependency array changes.
+
+By memoizing a value, you can avoid unnecessary calculations and improve the performance of your React application. The value will only be recalculated if one of its dependencies changes, otherwise the same instance of the value will be returned. This can be useful in situations where you have an expensive calculation that you only want to recompute when its dependencies change.
+
+Here is an example of how you might use useMemo:
+
+```js
+import React, { useMemo } from 'react';
+
+function MyComponent({ data }) {
+  const processedData = useMemo(() => {
+    return data.map((item) => item.toUpperCase());
+  }, [data]);
+
+  return (
+    <div>
+      {processedData.map((item) => (
+        <div key={item}>{item}</div>
+      ))}
+    </div>
+  );
+}
+```
+
+In this example, the processedData value is memoized using useMemo and the data prop is passed as a dependency. This means that the processedData value will only be recalculated if the data prop changes.
+
+- create slowFunction file
+- setup a function
+- import in index.js and set it equal to a value
+
+```js
+const slowFunction = () => {
+  let value = 0;
+  for (let i = 0; i <= 1000000000; i++) {
+    value += i;
+  }
+  return value;
+};
+
+export default slowFunction;
+```
+
+#### useTransition
+
+[JS Nuggets - Array.from](https://www.youtube.com/watch?v=zg1Bv4xubwo&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=11&t=666s)
+
+```js
+import Starter from './tutorial/11-performance/starter/04-react-18';
+```
+
+- useTransition is a React Hook that lets you update the state without blocking the UI.
+
+```js
+import { useState, useTransition } from 'react';
+const LatestReact = () => {
+  const [text, setText] = useState('');
+  const [items, setItems] = useState([]);
+  const [isPending, startTransition] = useTransition();
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+
+    startTransition(() => {
+      const newItems = Array.from({ length: 5000 }, (_, index) => {
+        return (
+          <div key={index}>
+            <img src='/vite.svg' alt='' />
+          </div>
+        );
+      });
+      setItems(newItems);
+    });
+  };
+  return (
+    <section>
+      <form className='form'>
+        <input
+          type='text'
+          className='form-input'
+          value={text}
+          onChange={handleChange}
+        />
+      </form>
+      <h4>Items Below</h4>
+      {isPending ? (
+        'Loading...'
+      ) : (
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            marginTop: '2rem',
+          }}
+        >
+          {items}
+        </div>
+      )}
+    </section>
+  );
+};
+export default LatestReact;
+```
+
+#### Suspense API
+
+The Suspense API is a feature in React that allows you to manage the loading state of your components. It provides a way to "suspend" rendering of a component until some data has been fetched, and display a fallback UI in the meantime. This makes it easier to handle asynchronous data loading and provide a smooth user experience in your React application.
+
+Here is an example of how you might use the Suspense API:
+
+```js
+import React, { lazy, Suspense } from 'react';
+
+const DataComponent = lazy(() => import('./DataComponent'));
+
+function MyComponent() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <DataComponent />
+    </Suspense>
+  );
+}
+```
+
+```js
+import { useState, useTransition, lazy, Suspense } from 'react';
+const SlowComponent = lazy(() => import('./SlowComponent'));
+const LatestReact = () => {
+  const [text, setText] = useState('');
+  const [items, setItems] = useState([]);
+  const [isPending, startTransition] = useTransition();
+  const [show, setShow] = useState(false);
+  const handleChange = (e) => {
+    setText(e.target.value);
+
+    startTransition(() => {
+      const newItems = Array.from({ length: 5000 }, (_, index) => {
+        return (
+          <div key={index}>
+            <img src='/vite.svg' alt='' />
+          </div>
+        );
+      });
+      setItems(newItems);
+    });
+  };
+  return (
+    <section>
+      <form className='form'>
+        <input
+          type='text'
+          className='form-input'
+          value={text}
+          onChange={handleChange}
+        />
+      </form>
+      <h4>Items Below</h4>
+      {isPending ? (
+        'Loading...'
+      ) : (
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            marginTop: '2rem',
+          }}
+        >
+          {items}
+        </div>
+      )}
+      <button onClick={() => setShow(!show)} className='btn'>
+        toggle
+      </button>
+      {show && (
+        <Suspense fallback={<h4>Loading...</h4>}>
+          <SlowComponent />
+        </Suspense>
+      )}
+    </section>
+  );
+};
+export default LatestReact;
+```
