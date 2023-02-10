@@ -13,7 +13,7 @@ export const Services = () => {
           const { id, icon, title, text} = service;
 
           return(
-            <article className="service">
+            <article key={id} className="service">
               <span className="service-icon">
                 <i className={icon}></i>
               </span>

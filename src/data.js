@@ -40,7 +40,7 @@ export const services = [
 export const tours = [
     {
         id:1,
-        image:{tour1},
+        image:tour1,
         date:'august 26th, 2020',
         title:'Tibet Adventure',
         info:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
@@ -50,7 +50,7 @@ export const tours = [
     },
     {
         id:2,
-        image:{tour2},
+        image:tour2,
         date:'october 1th, 2020',
         title:'best of java',
         info:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
@@ -60,22 +60,22 @@ export const tours = [
     },
     {
         id:3,
-        image:{tour3},
-        date:'august 26th, 2020',
-        title:'Tibet Adventure',
+        image:tour3,
+        date:'september 15th, 2020',
+        title:'explore hong kong',
         info:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
-        location:'china',
-        duration:'6 days',
-        cost:'from $2100'
+        location:'hong kong',
+        duration:'8 days',
+        cost:'from $5000'
     },
     {
         id:4,
-        image:{tour4},
-        date:'august 26th, 2020',
+        image:tour4,
+        date:'december 5th, 2019',
         title:'Tibet Adventure',
         info:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
-        location:'china',
-        duration:'6 days',
-        cost:'from $2100'
+        location:'kenya',
+        duration:'20 days',
+        cost:'from $3300'
     },
 ]
