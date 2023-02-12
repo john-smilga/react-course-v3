@@ -6,6 +6,8 @@ Check the data.js file
 ---
 ### Check here!
 
-[BackRoads App](https://github.com/Davidcastel26/PI-Pokemon-main)
+[BackRoads App](https://github.com/Davidcastel26/Backroads-Project)
+<img alt="Page" src="./z-assets/home.png" >
+
 <img alt="Page" src="./z-assets/BodyPage.png" >
 ---
