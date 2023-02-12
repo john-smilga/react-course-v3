@@ -1,37 +1,15 @@
 import { pageLinks, socialLinks } from "../data"
+import { IconsLinks } from "./LinksComponetns/IconsLinks";
+import { PageLinks } from "./LinksComponetns/PageLinks";
 
 export const Footer = () => {
   return (
     <footer className="section footer">
-      <ul className="footer-links">
-        {
-          pageLinks.map((link) => {
+      
+      <PageLinks parentClass='footer-links' itemClass='footer-link'/>
 
-            const { id, href, text } = link;
-            return(
-              <li key={id}>
-                <a href={href} className="footer-link">{text}</a>
-              </li>
-            )
-          })
-        }
-       </ul>
-      <ul className="footer-icons">
-        {
-          socialLinks.map( link => {
-            
-            const {id, href, icon} = link;
+      <IconsLinks parentClassIcon='footer-icons' itemClassIcon='footer-icon'/>
 
-            return(
-              <li key={id}>
-                <a href={href} target="_blank" className="footer-icon">
-                  <i className={icon}></i>
-                </a>
-              </li>
-            )
-          })
-        }
-      </ul>
       <p className="copyright">
 
         copyright &copy; Backroads travel tours company
