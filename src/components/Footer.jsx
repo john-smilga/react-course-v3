@@ -4,12 +4,8 @@ import { PageLinks } from "./PageLinks";
 export const Footer = () => {
   return (
     <footer className="section footer">
-      {/* 
-      className="footer-links">
-        className="footer-link"
       
-      */}
-      <PageLinks />
+      <PageLinks parentClass='footer-links' itemClass='footer-link'/>
 
       <ul className="footer-icons">
         {
