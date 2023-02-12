@@ -6,7 +6,7 @@ export const PageLinks = ({ parentClass, itemClass}) => {
     <ul className={parentClass} id="nav-links">
         { pageLinks.map((link) =>{
             return ( 
-              <li>
+              <li key={link.id}>
                 <a href={link.href} className={itemClass}> {link.text} </a>
               </li>
             )
