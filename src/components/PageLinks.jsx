@@ -1,13 +1,13 @@
 import { pageLinks } from "../data"
 
 
-export const PageLinks = () => {
+export const PageLinks = ({ parentClass, itemClass}) => {
   return (
-    <ul className="nav-links" id="nav-links">
+    <ul className={parentClass} id="nav-links">
         { pageLinks.map((link) =>{
             return ( 
               <li>
-                <a href={link.href} className="nav-link"> {link.text} </a>
+                <a href={link.href} className={itemClass}> {link.text} </a>
               </li>
             )
         })}
