@@ -1,4 +1,4 @@
-import { pageLinks } from "../data"
+import { pageLinks } from "../../data"
 
 
 export const PageLinks = ({ parentClass, itemClass}) => {

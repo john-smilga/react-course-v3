@@ -1,6 +1,6 @@
 import { pageLinks, socialLinks } from "../data"
-import { IconsLinks } from "./IconsLinks";
-import { PageLinks } from "./PageLinks";
+import { IconsLinks } from "./LinksComponetns/IconsLinks";
+import { PageLinks } from "./LinksComponetns/PageLinks";
 
 export const Footer = () => {
   return (
