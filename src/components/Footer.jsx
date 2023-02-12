@@ -33,8 +33,12 @@ export const Footer = () => {
         }
       </ul>
       <p className="copyright">
+
         copyright &copy; Backroads travel tours company
-        <span id="date"></span> all rights reserved
+        <span id="date"> 
+          {new Date().getFullYear()} 
+        </span> all rights reserved.
+
       </p>
     </footer>
   )
