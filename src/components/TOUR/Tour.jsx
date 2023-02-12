@@ -1,27 +1,14 @@
-import { tours } from "../data"
-import { Title } from "./Title"
 
-export const Tours = () => {
+export const Tour = ({ 
+    image,
+    date,
+    title,
+    info, 
+    location, 
+    duration, 
+    cost}) => {
   return (
-    <section className="section" id="tours">
-      
-      <Title title='featured' subTitle='tours'/>
-
-      <div className="section-center featured-center">
-       
-        {
-          tours.map((tour)=>{
-            const {id, 
-                  image,
-                  date,
-                  title,
-                  info, 
-                  location, 
-                  duration, 
-                  cost} = tour;
-
-            return(
-              <article className="tour-card" key={id}>
+    <article className="tour-card">
                 <div className="tour-img-container">
                   
                   <img 
@@ -52,10 +39,5 @@ export const Tours = () => {
                   </div>
                 </div>
               </article>
-            )
-          })
-        }
-      </div>
-    </section>
   )
 }

@@ -1,4 +1,3 @@
-import { pageLinks, socialLinks } from "../data"
 import { IconsLinks } from "./LinksComponetns/IconsLinks";
 import { PageLinks } from "./LinksComponetns/PageLinks";
 
