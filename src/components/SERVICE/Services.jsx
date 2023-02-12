@@ -1,5 +1,5 @@
-import { Title } from "./Title";
-import { services } from "../data";
+import { Title } from "../Title";
+import { services } from "../../data";
 import { Service } from "./Service";
 
 export const Services = () => {
@@ -13,7 +13,7 @@ export const Services = () => {
         {services.map((service) => {
 
           return <Service key={service.id} {...service}/>
-          
+
         })}
       </div>
     </section>
