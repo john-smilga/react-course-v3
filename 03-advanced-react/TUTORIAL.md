@@ -3106,3 +3106,14 @@ const LatestReact = () => {
 };
 export default LatestReact;
 ```
+
+- typical setup (wrap entire return in Suspense)
+
+```js
+return (
+  <Suspense fallback={<h4>Loading...</h4>}>
+    {/* rest of the logic */}
+    <section>{show && <SlowComponent />}</section>
+  </Suspense>
+);
+```
