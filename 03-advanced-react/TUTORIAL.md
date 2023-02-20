@@ -1959,6 +1959,8 @@ export default UncontrolledInputs;
 
 - Object From Entries
 
+The Object.fromEntries() static method transforms a list of key-value pairs into an object.
+
 ```js
 const entries = new Map([
   ['foo', 'bar'],
