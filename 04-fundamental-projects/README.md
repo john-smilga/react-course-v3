@@ -33,7 +33,9 @@ npm run dev
 
 - in README.md you will find steps
 - you can try to complete the entire app before watching or before each video
-- purposely somewhat vague, since that's the challenge
+
+Please note that the steps provided are intentionally somewhat vague. The purpose of this challenge is to encourage creative thinking and problem-solving by allowing for multiple possible solutions. Therefore, feel free to interpret these steps in your own way and adapt them to your unique circumstances. Don't be afraid to think outside the box and come up with innovative approaches to the task at hand!
+
 
 #### Size
 
