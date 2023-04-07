@@ -85,9 +85,16 @@ try {
 #### Global Defaults
 
 ```js
-axios.defaults.headers.common['Accept'] = 'application/json';
+// In latest axios version common property returns "undefined"
+// axios.defaults.headers.common['Accept'] = 'application/json';
+axios.defaults.headers['Accept'] = 'application/json';
+
 axios.defaults.baseURL = 'https://api.example.com';
-axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+
+// In latest axios version common property returns "undefined"
+// axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+axios.defaults.headers['Authorization'] = AUTH_TOKEN;
+
 axios.defaults.headers.post['Content-Type'] =
   'application/x-www-form-urlencoded';
 ```
@@ -110,7 +117,9 @@ const authFetch = axios.create({
 ```js
 authFetch.interceptors.request.use(
   (request) => {
-    request.headers.common['Accept'] = `application/json`;
+    // request.headers.common['Accept'] = `application/json`;
+    request.headers['Accept'] = `application/json`;
+
     console.log('request sent');
     // must return request
     return request;
@@ -141,5 +150,16 @@ authFetch.interceptors.response.use(
 In the latest version there is no common property
 
 ```js
+// In latest axios version common property returns "undefined"
+// axios.defaults.headers.common['Accept'] = 'application/json';
+axios.defaults.headers['Accept'] = 'application/json';
+
+// In latest axios version common property returns "undefined"
+// axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+axios.defaults.headers['Authorization'] = AUTH_TOKEN;
+```
+
+```js
+// request.headers.common['Accept'] = `application/json`;
 request.headers['Accept'] = `application/json`;
 ```
