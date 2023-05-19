@@ -1,8 +1,7 @@
 export const shortList = [
   {
     id: 1,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-2_ipcjws.jpg',
+    image: 'https://www.course-api.com/images/people/person-1.jpeg',
     name: 'maria ferguson',
     title: 'office manager',
     quote:
@@ -13,8 +12,7 @@ export const shortList = [
 export const list = [
   {
     id: 1,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-2_ipcjws.jpg',
+    image: 'https://www.course-api.com/images/people/person-1.jpeg',
     name: 'maria ferguson',
     title: 'office manager',
     quote:
@@ -22,8 +20,7 @@ export const list = [
   },
   {
     id: 2,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
+    image: 'https://www.course-api.com/images/people/person-4.jpeg',
     name: 'john doe',
     title: 'regular guy',
     quote:
@@ -31,8 +28,7 @@ export const list = [
   },
   {
     id: 3,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959121/person-1_aufeoq.jpg',
+    image: 'https://www.course-api.com/images/people/person-3.jpeg',
     name: 'peter smith',
     title: 'product designer',
     quote:
@@ -40,8 +36,7 @@ export const list = [
   },
   {
     id: 4,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
+    image: 'https://www.course-api.com/images/people/person-2.jpeg',
     name: 'susan andersen',
     title: 'the boss',
     quote:
@@ -52,8 +47,7 @@ export const list = [
 export const longList = [
   {
     id: 1,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-2_ipcjws.jpg',
+    image: 'https://www.course-api.com/images/people/person-1.jpeg',
     name: 'maria ferguson',
     title: 'office manager',
     quote:
@@ -61,8 +55,7 @@ export const longList = [
   },
   {
     id: 2,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
+    image: 'https://www.course-api.com/images/people/person-4.jpeg',
     name: 'john doe',
     title: 'regular guy',
     quote:
@@ -70,8 +63,7 @@ export const longList = [
   },
   {
     id: 3,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959121/person-1_aufeoq.jpg',
+    image: 'https://www.course-api.com/images/people/person-3.jpeg',
     name: 'peter smith',
     title: 'product designer',
     quote:
@@ -79,8 +71,7 @@ export const longList = [
   },
   {
     id: 4,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
+    image: 'https://www.course-api.com/images/people/person-2.jpeg',
     name: 'susan andersen',
     title: 'the boss',
     quote:
@@ -88,8 +79,7 @@ export const longList = [
   },
   {
     id: 5,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-2_ipcjws.jpg',
+    image: 'https://www.course-api.com/images/people/person-1.jpeg',
     name: 'maria ferguson',
     title: 'office manager',
     quote:
@@ -97,8 +87,7 @@ export const longList = [
   },
   {
     id: 6,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
+    image: 'https://www.course-api.com/images/people/person-4.jpeg',
     name: 'john doe',
     title: 'regular guy',
     quote:
@@ -106,8 +95,7 @@ export const longList = [
   },
   {
     id: 7,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959121/person-1_aufeoq.jpg',
+    image: 'https://www.course-api.com/images/people/person-3.jpeg',
     name: 'peter smith',
     title: 'product designer',
     quote:
@@ -115,8 +103,7 @@ export const longList = [
   },
   {
     id: 8,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
+    image: 'https://www.course-api.com/images/people/person-2.jpeg',
     name: 'susan andersen',
     title: 'the boss',
     quote:
