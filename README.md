@@ -5,7 +5,7 @@ The content is part of my React Course. If you enjoy the content and my teaching
 [My React Course](https://www.udemy.com/course/react-tutorial-and-projects-course/?referralCode=FEE6A921AF07E2563CEF)
 
 ## All My Courses
-
+s
 [Project Based Web Dev Courses](https://www.johnsmilga.com/)
 
 #### Support
