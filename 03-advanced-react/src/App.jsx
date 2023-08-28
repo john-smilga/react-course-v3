@@ -1,7 +1,10 @@
+import Starter from './tutorial/09-context-api/starter/Navbar'
+import Final from "./tutorial/08-custom-hooks/final/01-toggle";
+
 function App() {
   return (
     <div className='container'>
-      <h2>Advanced React</h2>
+      <Starter/>
     </div>
   );
 }
