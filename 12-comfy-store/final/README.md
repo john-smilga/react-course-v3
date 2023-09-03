@@ -3618,6 +3618,37 @@ const Navbar = () => {
 };
 export default Navbar;
 ```
+## Additional Logic
+
+Navbar.jsx
+
+```js
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from '../features/user/userSlice';
+
+const Navbar = () => {
+  const theme = useSelector((state) => state.userState.theme);
+  const isDarkTheme = theme === 'dracula';
+
+  return (...
+          {/* THEME SETUP */}
+          <label className='swap swap-rotate'>
+            <input
+              type='checkbox'
+              onChange={handleTheme}
+              defaultChecked={isDarkTheme}
+            />
+            {/* sun icon*/}
+            <BsSunFill className='swap-on h-4 w-4' />
+            {/* moon icon*/}
+            <BsMoonFill className='swap-off h-4 w-4' />
+          </label>
+          );
+          ...
+};
+export default Navbar;
+```
+
 
 ## Challenge (42) - Setup Logout and Access User
 
