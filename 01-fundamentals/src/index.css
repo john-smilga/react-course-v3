@@ -30,6 +30,7 @@ body {
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
+  position: relative;
 }
 .book img {
   width: 100%;
@@ -48,6 +49,17 @@ body {
 }
 .book p {
   margin: 1rem 0 0.5rem;
+}
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #c35600;
+  color: #fff;
 }
 h1 {
   text-align: center;
