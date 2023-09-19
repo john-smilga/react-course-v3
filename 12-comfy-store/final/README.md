@@ -4056,7 +4056,7 @@ import { useSelector } from 'react-redux';
 import { CheckoutForm, SectionTitle, CartTotals } from '../components';
 
 const Checkout = () => {
-  const cartItems = useSelector((state) => state.cartState.cartTotal);
+  const cartTotal  = useSelector((state) => state.cartState.cartTotal);
   if (cartTotal.length === 0) {
     return <SectionTitle text='Your cart is empty' />;
   }
