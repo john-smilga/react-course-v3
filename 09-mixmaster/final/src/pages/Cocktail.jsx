@@ -1,4 +1,4 @@
-import { useLoaderData, Link, Navigate } from 'react-router-dom';
+import { useLoaderData, Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Wrapper from '../assets/wrappers/CocktailPage';
 const singleCocktailUrl =
@@ -25,7 +25,7 @@ export const loader =
 
 const Cocktail = () => {
   const { id } = useLoaderData();
-
+  const navigate = useNavigate();
   const { data } = useQuery(singleCocktailQuery(id));
   if (!data) return <Navigate to='/' />;
 
@@ -49,9 +49,9 @@ const Cocktail = () => {
   return (
     <Wrapper>
       <header>
-        <Link to='/' className='btn'>
+        <button onClick={() => navigate(-1)} className='btn'>
           back home
-        </Link>
+        </button>
         <h3>{name}</h3>
       </header>
       <div className='drink'>
