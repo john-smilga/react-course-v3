@@ -5,13 +5,16 @@ import Items from './Items';
 import { ToastContainer, toast } from 'react-toastify';
 
 const getLocalStorage = () => {
-  let list = localStorage.getItem('list');
-  if (list) {
-    list = JSON.parse(localStorage.getItem('list'));
-  } else {
-    list = [];
-  }
-  return list;
+  // let list = localStorage.getItem('list');
+  // if (list) {
+  //   list = JSON.parse(localStorage.getItem('list'));
+  // } else {
+  //   list = [];
+  // }
+  // return list;
+  let list = JSON.parse(localStorage.getItem("list")) 
+
+  return list ? list : [] 
 };
 
 const setLocalStorage = (items) => {
