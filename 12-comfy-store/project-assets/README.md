@@ -1081,7 +1081,7 @@ export default About;
           - For each image, a `div` with class `carousel-item`.
             - Inside the `div`, an `img` element with attributes `src` set to the image path and classes `rounded-box`, `h-full`, `w-80`, and `object-cover`.
 
-## Challenge (17) - Hero Component
+## Solution (17) - Hero Component
 
 Hero.jsx
 
