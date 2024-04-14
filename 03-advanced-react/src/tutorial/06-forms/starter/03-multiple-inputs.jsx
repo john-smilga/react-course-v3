@@ -17,7 +17,7 @@ const MultipleInputs = () => {
           </label>
           <input type='email' className='form-input' id='email' />
         </div>
-        {/* email */}
+        {/* password */}
         <div className='form-row'>
           <label htmlFor='password' className='form-label'>
             Password
