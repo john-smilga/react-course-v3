@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 // limit, if 429 wait for 15 min and try again
-const url = 'https://course-api.com/react-store-products';
+const url = 'https://www.course-api.com/react-store-products';
 
 const FirstRequest = () => {
   useEffect(() => {

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import BtnContainer from './BtnContainer';
 import JobInfo from './JobInfo';
 
-const url = 'https://course-api.com/react-tabs-project';
+const url = 'https://www.course-api.com/react-tabs-project';
 
 function App() {
   const [loading, setLoading] = useState(true);

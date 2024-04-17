@@ -602,8 +602,8 @@ export default Modal;
 
 #### async functionality with createAsyncThunk
 
-- [Course API](https://course-api.com/)
-- https://course-api.com/react-useReducer-cart-project
+- [Course API](https://www.course-api.com/)
+- https://www.course-api.com/react-useReducer-cart-project
 - cartSlice.js
 
 - action type
@@ -613,7 +613,7 @@ export default Modal;
 ```js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const url = 'https://course-api.com/react-useReducer-cart-project';
+const url = 'https://www.course-api.com/react-useReducer-cart-project';
 
 export const getCartItems = createAsyncThunk('cart/getCartItems', () => {
   return fetch(url)

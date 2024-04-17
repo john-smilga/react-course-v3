@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-const url = 'https://course-api.com/axios-tutorial-post';
+const url = 'https://www.course-api.com/axios-tutorial-post';
 
 const PostRequest = () => {
   const [name, setName] = useState('');
