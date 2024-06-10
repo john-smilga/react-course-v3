@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Task {
+  id String @id @default(uuid())
+  content String
+  createdAt DateTime @default(now())
+  completed Boolean @default(false)
+}
+
+model Job {
+  id        String      @id @default(uuid())
+  clerkId   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  position    String
+  company   String
+  location  String
+  status      String
+  mode     String
+}
+
+model Tour {
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  city String
+  country String
+  title String
+  description String @db.Text
+  image String? @db.Text
+  stops Json
+  @@unique([city,country])
+}
+
+model Token {
+  clerkId String @id
+  tokens Int @default (1000)
+}
