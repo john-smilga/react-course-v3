@@ -10,8 +10,8 @@ npx create-next-app@latest projectName
 
 ## Assets
 
-- project repo
-  - 03-jobify/assets
+- main course repo
+  - nextjs-jobify-app/assets
 
 ## Libraries
 
