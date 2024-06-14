@@ -10,9 +10,9 @@ type FormInputProps = {
 };
 
 function FormInput({
-  label,
   name,
   type,
+  label,
   defaultValue,
   placeholder,
 }: FormInputProps) {
@@ -32,5 +32,4 @@ function FormInput({
     </div>
   );
 }
-
 export default FormInput;

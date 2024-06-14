@@ -1,19 +1,18 @@
-import FormInput from '@/components/form/FormInput';
 import { SubmitButton } from '@/components/form/Buttons';
+import CheckboxInput from '@/components/form/CheckboxInput';
 import FormContainer from '@/components/form/FormContainer';
-import { createProductAction } from '@/utils/actions';
+import FormInput from '@/components/form/FormInput';
 import ImageInput from '@/components/form/ImageInput';
 import PriceInput from '@/components/form/PriceInput';
 import TextAreaInput from '@/components/form/TextAreaInput';
+import { Button } from '@/components/ui/button';
+import { createProductAction } from '@/utils/actions';
 import { faker } from '@faker-js/faker';
-import CheckboxInput from '@/components/form/CheckboxInput';
 
-function CreateProduct() {
+function CreateProductPage() {
   const name = faker.commerce.productName();
   const company = faker.company.name();
-  // const description = faker.commerce.productDescription();
   const description = faker.lorem.paragraph({ min: 10, max: 12 });
-
   return (
     <section>
       <h1 className='text-2xl font-semibold mb-8 capitalize'>create product</h1>
@@ -43,11 +42,10 @@ function CreateProduct() {
           <div className='mt-6'>
             <CheckboxInput name='featured' label='featured' />
           </div>
-
-          <SubmitButton text='Create Product' className='mt-8' />
+          <SubmitButton text='create product' className='mt-8' />
         </FormContainer>
       </div>
     </section>
   );
 }
-export default CreateProduct;
+export default CreateProductPage;

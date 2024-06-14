@@ -8,7 +8,7 @@ type CheckboxInputProps = {
   defaultChecked?: boolean;
 };
 
-export default function CheckboxInput({
+function CheckboxInput({
   name,
   label,
   defaultChecked = false,
@@ -18,10 +18,11 @@ export default function CheckboxInput({
       <Checkbox id={name} name={name} defaultChecked={defaultChecked} />
       <label
         htmlFor={name}
-        className='text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 capitalize'
+        className='text-sm leading-none capitalize peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
       >
         {label}
       </label>
     </div>
   );
 }
+export default CheckboxInput;

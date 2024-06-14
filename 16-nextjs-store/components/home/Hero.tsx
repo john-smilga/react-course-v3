@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { Button } from '../ui/button';
 import HeroCarousel from './HeroCarousel';
 
 function Hero() {
@@ -10,10 +10,9 @@ function Hero() {
           We are changing the way people shop
         </h1>
         <p className='mt-8 max-w-xl text-lg leading-8 text-muted-foreground'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque et
-          voluptas saepe in quae voluptate, laborum maiores possimus illum
-          reprehenderit aut delectus veniam cum perferendis unde sint doloremque
-          non nam.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+          maxime laboriosam, deserunt velit qui quia? Dolor dolores esse
+          corporis. Dolores.
         </p>
         <Button asChild size='lg' className='mt-10'>
           <Link href='/products'>Our Products</Link>

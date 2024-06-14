@@ -22,7 +22,6 @@ export function SubmitButton({
   size = 'lg',
 }: SubmitButtonProps) {
   const { pending } = useFormStatus();
-
   return (
     <Button
       type='submit'
@@ -43,6 +42,7 @@ export function SubmitButton({
 }
 
 type actionType = 'edit' | 'delete';
+
 export const IconButton = ({ actionType }: { actionType: actionType }) => {
   const { pending } = useFormStatus();
 
@@ -57,7 +57,6 @@ export const IconButton = ({ actionType }: { actionType: actionType }) => {
         throw new Error(`Invalid action type: ${never}`);
     }
   };
-
   return (
     <Button
       type='submit'
@@ -65,7 +64,7 @@ export const IconButton = ({ actionType }: { actionType: actionType }) => {
       variant='link'
       className='p-2 cursor-pointer'
     >
-      {pending ? <ReloadIcon className=' animate-spin' /> : renderIcon()}
+      {pending ? <ReloadIcon className='animate-spin' /> : renderIcon()}
     </Button>
   );
 };

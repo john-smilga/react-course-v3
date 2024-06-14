@@ -10,8 +10,8 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 import { links } from '@/utils/links';
 import UserIcon from './UserIcon';
+import { SignInButton, SignedIn, SignedOut, SignUpButton } from '@clerk/nextjs';
 import SignOutLink from './SignOutLink';
-import { SignInButton, SignUpButton, SignedIn, SignedOut } from '@clerk/nextjs';
 import { auth } from '@clerk/nextjs/server';
 function LinksDropdown() {
   const { userId } = auth();
@@ -24,7 +24,7 @@ function LinksDropdown() {
           <UserIcon />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='w-48' align='start' sideOffset={10}>
+      <DropdownMenuContent className='w-40' align='start' sideOffset={10}>
         <SignedOut>
           <DropdownMenuItem>
             <SignInButton mode='modal'>

@@ -2,7 +2,7 @@
 
 ```sh
 
-npx create-next-app@latest store
+npx create-next-app@latest home-away
 ```
 
 ```sh
@@ -1826,17 +1826,19 @@ import { adminLinks } from '@/utils/links';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+
 function Sidebar() {
   const pathname = usePathname();
+
   return (
     <aside>
       {adminLinks.map((link) => {
         const isActivePage = pathname === link.href;
-        const variant = isActivePage ? 'secondary' : 'ghost';
+        const variant = isActivePage ? 'default' : 'ghost';
         return (
           <Button
             asChild
-            className='w-full mb-2 capitalize font-normal'
+            className='w-full mb-2 capitalize font-normal justify-start'
             variant={variant}
           >
             <Link key={link.href} href={link.href}>
@@ -2400,7 +2402,7 @@ export const createProductAction = async (
 
 ### Problems
 
-- lots of code code just to access values
+- lots of code code just to access input values
 - no validation (only html one)
 
 ### Zod
@@ -2410,6 +2412,8 @@ Zod is a JavaScript library for building schemas and validating data, providing 
 ```sh
 npm install zod
 ```
+
+[Docs](https://zod.dev/?id=basic-usage)
 
 - setup utils/schemas.ts
 
@@ -2862,7 +2866,38 @@ function DeleteProduct({ productId }: { productId: string }) {
 }
 ```
 
-### FetchAdminProductDetails and UpdateProductAction
+### Remove Image From Supabase
+
+- utils/supabase.ts
+
+```ts
+export const deleteImage = (url: string) => {
+  const imageName = url.split('/').pop();
+  if (!imageName) throw new Error('Invalid URL');
+  return supabase.storage.from(bucket).remove([imageName]);
+};
+```
+
+```ts
+export const deleteProductAction = async (prevState: { productId: string }) => {
+  const { productId } = prevState;
+  await getAdminUser();
+  try {
+    const product = await db.product.delete({
+      where: {
+        id: productId,
+      },
+    });
+    await deleteImage(product.image);
+    revalidatePath('/admin/products');
+    return { message: 'product removed' };
+  } catch (error) {
+    return renderError(error);
+  }
+};
+```
+
+### FetchAdminProductDetails, UpdateProductAction and updateProductImageAction
 
 - actions.ts
 
@@ -2882,26 +2917,13 @@ export const updateProductAction = async (
   prevState: any,
   formData: FormData
 ) => {
-  await getAdminUser();
-  try {
-    const productId = formData.get('id') as string;
-    const rawData = Object.fromEntries(formData);
-
-    const validatedFields = validateWithZodSchema(productSchema, rawData);
-
-    await db.product.update({
-      where: {
-        id: productId,
-      },
-      data: {
-        ...validatedFields,
-      },
-    });
-    revalidatePath(`/admin/products/${productId}/edit`);
-    return { message: 'Product updated successfully' };
-  } catch (error) {
-    return renderError(error);
-  }
+  return { message: 'Product updated successfully' };
+};
+export const updateProductImageAction = async (
+  prevState: any,
+  formData: FormData
+) => {
+  return { message: 'Product Image updated successfully' };
 };
 ```
 
@@ -2965,36 +2987,32 @@ async function EditProductPage({ params }: { params: { id: string } }) {
 export default EditProductPage;
 ```
 
-### UpdateProductImageAction
+### UpdateProductAction
 
-- actions.ts
+actions.ts
 
 ```ts
-export const updateProductImageAction = async (
+export const updateProductAction = async (
   prevState: any,
   formData: FormData
 ) => {
-  await getAuthUser();
+  await getAdminUser();
   try {
-    const image = formData.get('image') as File;
     const productId = formData.get('id') as string;
+    const rawData = Object.fromEntries(formData);
 
-    const validatedFields = validateWithZodSchema(imageSchema, {
-      image,
-    });
-    const fullPath = await uploadImage(validatedFields.image);
+    const validatedFields = validateWithZodSchema(productSchema, rawData);
 
     await db.product.update({
       where: {
         id: productId,
       },
       data: {
-        image: fullPath,
+        ...validatedFields,
       },
     });
-
     revalidatePath(`/admin/products/${productId}/edit`);
-    return { message: 'Product image updated successfully' };
+    return { message: 'Product updated successfully' };
   } catch (error) {
     return renderError(error);
   }
@@ -3029,8 +3047,8 @@ function ImageInputContainer(props: ImageInputContainerProps) {
     <div className='mb-8'>
       <Image
         src={image}
-        width={100}
-        height={100}
+        width={200}
+        height={200}
         className='rounded-md object-cover mb-4 w-[200px] h-[200px]'
         alt={name}
       />
@@ -3043,7 +3061,7 @@ function ImageInputContainer(props: ImageInputContainerProps) {
         {text}
       </Button>
       {isUpdateFormVisible && (
-        <div className='max-w-lg mt-4'>
+        <div className='max-w-md mt-4'>
           <FormContainer action={action}>
             {props.children}
             <ImageInput />
@@ -3070,9 +3088,77 @@ return (
       text='update image'
     >
       <input type='hidden' name='id' value={id} />
+      <input type='hidden' name='url' value={product.image} />
     </ImageInputContainer>
   </div>
 );
+```
+
+### UpdateProductImageAction
+
+- actions.ts
+
+```ts
+export const updateProductImageAction = async (
+  prevState: any,
+  formData: FormData
+) => {
+  await getAuthUser();
+  try {
+    const image = formData.get('image') as File;
+    const productId = formData.get('id') as string;
+    const oldImageUrl = formData.get('url') as string;
+
+    const validatedFile = validateWithZodSchema(imageSchema, { image });
+    const fullPath = await uploadImage(validatedFile.image);
+    await deleteImage(oldImageUrl);
+    await db.product.update({
+      where: {
+        id: productId,
+      },
+      data: {
+        image: fullPath,
+      },
+    });
+    revalidatePath(`/admin/products/${productId}/edit`);
+    return { message: 'Product Image updated successfully' };
+  } catch (error) {
+    return renderError(error);
+  }
+};
+```
+
+### LoadingTable
+
+- create components/global/LoadingTable.tsx
+
+```tsx
+import { Skeleton } from '../ui/skeleton';
+
+function LoadingTable({ rows = 5 }: { rows?: number }) {
+  const tableRows = Array.from({ length: rows }, (_, index) => {
+    return (
+      <div className='mb-4' key={index}>
+        <Skeleton className='w-full h-8 rounded' />
+      </div>
+    );
+  });
+  return <>{tableRows}</>;
+}
+export default LoadingTable;
+```
+
+- create admin/products/loading.tsx
+
+```tsx
+'use client';
+
+import LoadingTable from '@/components/global/LoadingTable';
+
+function loading() {
+  return <LoadingTable />;
+}
+export default loading;
 ```
 
 ### Favorite Model
