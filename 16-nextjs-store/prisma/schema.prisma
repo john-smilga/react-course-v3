@@ -19,4 +19,70 @@ model Product {
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
   clerkId  String
+  favorites Favorite[]
+  reviews Review []
+  cartItems CartItem[]
+
+}
+
+model Favorite {
+  id        String   @id @default(uuid())
+  clerkId  String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  clerkId  String
+  rating Int
+  comment String
+  authorName String
+  authorImageUrl String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+   product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+}
+
+
+model Cart {
+  id        String   @id @default(uuid())
+  clerkId  String
+  cartItems CartItem[]
+  numItemsInCart Int @default(0)
+  cartTotal Int @default(0)
+  shipping Int @default(5)
+  tax Int @default(0)
+  taxRate Float @default(0.1)
+  orderTotal Int @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CartItem {
+  id        String   @id @default(uuid())
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+  cart     Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  cartId   String
+  amount  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model Order {
+  id        String   @id @default(uuid())
+  clerkId  String
+  products Int  @default(0)
+  orderTotal Int @default(0)
+  tax Int @default(0)
+  shipping Int @default(0)
+  email String
+  isPaid Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
