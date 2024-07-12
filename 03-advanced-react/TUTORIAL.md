@@ -1542,7 +1542,7 @@ Now, if we call add(3), the function will return 3, because the default value of
 
 #### Optional Chaining - Vanilla JS (Optional)
 
-n JavaScript, the optional chaining operator (?.) is a new feature that allows you to access properties of an object without worrying about whether the object or the property is null or undefined. It's a shorthand for a common pattern of checking for null or undefined before accessing an object's property.
+In JavaScript, the optional chaining operator (?.) is a new feature that allows you to access properties of an object without worrying about whether the object or the property is null or undefined. It's a shorthand for a common pattern of checking for null or undefined before accessing an object's property.
 
 For example, consider the following code, which accesses the firstName property of an object:
 
