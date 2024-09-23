@@ -58,7 +58,7 @@ export default AboutPage;
 [Next Install](https://ui.shadcn.com/docs/installation/next)
 
 ```sh
-npx shadcn-ui@latest init
+npx shadcn@latest init
 
 ```
 
@@ -67,7 +67,7 @@ npx shadcn-ui@latest init
 - CSS variables:YES
 
 ```sh
-npx shadcn-ui@latest add button
+npx shadcn@latest add button
 ```
 
 ```tsx
@@ -87,7 +87,7 @@ export default HomePage;
 ```
 
 ```sh
-npx shadcn-ui@latest add breadcrumb card checkbox dropdown-menu input label popover select separator table textarea toast skeleton carousel
+npx shadcn@latest add breadcrumb card checkbox dropdown-menu input label popover select separator table textarea toast skeleton carousel
 ```
 
 - components

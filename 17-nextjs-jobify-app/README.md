@@ -28,13 +28,13 @@ npx create-next-app@latest projectName
 - open another terminal window (optional)
 
 ```sh
-npx shadcn-ui@latest init
+npx shadcn@latest init
 ```
 
 - setup Button
 
 ```sh
-npx shadcn-ui@latest add button
+npx shadcn@latest add button
 ```
 
 [Icons](https://lucide.dev/guide/packages/lucide-react)
@@ -457,7 +457,7 @@ export default Navbar;
 
 2. **Install the Dropdown-Menu Component:**
 
-   - Install it using `npx shadcn-ui@latest add dropdown-menu`
+   - Install it using `npx shadcn@latest add dropdown-menu`
 
 3. **Import necessary modules and components:**
 
@@ -485,7 +485,7 @@ export default Navbar;
 - [docs](https://ui.shadcn.com/docs/components/dropdown-menu)
 
 ```sh
-npx shadcn-ui@latest add dropdown-menu
+npx shadcn@latest add dropdown-menu
 ```
 
 LinksDropdown.tsx
@@ -675,7 +675,7 @@ export function ModeToggle() {
 - render in add-job/page.tsx
 
 ```sh
-npx shadcn-ui@latest add form input
+npx shadcn@latest add form input
 ```
 
 ```tsx
@@ -835,7 +835,7 @@ export type CreateAndEditJobType = z.infer<typeof createAndEditJobSchema>;
 - install
 
 ```sh
-npx shadcn-ui@latest add select
+npx shadcn@latest add select
 ```
 
 - [docs](https://ui.shadcn.com/docs/components/select)
@@ -1282,7 +1282,7 @@ export async function createJobAction(
 - install
 
 ```sh
-npx shadcn-ui@latest add toast
+npx shadcn@latest add toast
 
 ```
 
@@ -1761,7 +1761,7 @@ export default JobsList;
 - install
 
 ```sh
-npx shadcn-ui@latest add badge separator card
+npx shadcn@latest add badge separator card
 
 ```
 
@@ -2665,7 +2665,7 @@ export default StatsPage;
 - install
 
 ```sh
-npx shadcn-ui@latest add skeleton
+npx shadcn@latest add skeleton
 
 ```
 
