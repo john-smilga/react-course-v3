@@ -1256,6 +1256,10 @@ export default App;
 
 ```
 
+#### Important Update !!!
+
+Since the API does not return drinks with empty searchTerm, code below contains additional logic !!!
+
 #### React Query - Landing Page
 
 Landing.jsx
@@ -1267,6 +1271,9 @@ const searchCocktailsQuery = (searchTerm) => {
   return {
     queryKey: ['search', searchTerm || 'all'],
     queryFn: async () => {
+      // Default to 'a' if no search term is provided since API has changed
+      searchTerm = searchTerm || 'a';
+
       const response = await axios.get(`${cocktailSearchUrl}${searchTerm}`);
       return response.data.drinks;
     },
