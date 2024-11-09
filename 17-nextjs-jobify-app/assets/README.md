@@ -3,7 +3,7 @@
 ## Create New Next.js Project
 
 ```sh
-npx create-next-app@latest projectName
+npx create-next-app@14 projectName
 ```
 
 - choose typescript and eslint

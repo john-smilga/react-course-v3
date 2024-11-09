@@ -2,7 +2,7 @@
 
 ```sh
 
-npx create-next-app@latest store
+npx create-next-app@14 store
 ```
 
 ```sh
