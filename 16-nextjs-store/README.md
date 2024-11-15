@@ -51,44 +51,9 @@ function AboutPage() {
 export default AboutPage;
 ```
 
-### Shadcn/ui
+### Starter
 
-[Docs](https://ui.shadcn.com/)
-
-[Next Install](https://ui.shadcn.com/docs/installation/next)
-
-```sh
-npx shadcn@latest init
-
-```
-
-- New York
-- Zinc
-- CSS variables:YES
-
-```sh
-npx shadcn@latest add button
-```
-
-```tsx
-import { Button } from '@/components/ui/button';
-
-function HomePage() {
-  return (
-    <div>
-      <h1 className='text-3xl'>HomePage</h1>
-      <Button variant='outline' size='lg' className='capitalize m-8'>
-        Click me
-      </Button>
-    </div>
-  );
-}
-export default HomePage;
-```
-
-```sh
-npx shadcn@latest add breadcrumb card checkbox dropdown-menu input label popover select separator table textarea toast skeleton carousel
-```
+Starter already has shadcn installed and configured. 👍
 
 - components
   - ui
