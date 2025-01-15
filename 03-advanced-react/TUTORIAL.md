@@ -17,8 +17,8 @@
 - in the beginning examples with numbers and buttons :):):)
 
 ```js
-import Starter from './tutorial/1-useState/starter/1-error-example';
-import Final from './tutorial/1-useState/final/1-error-example';
+import Starter from './tutorial/01-useState/starter/01-error-example.jsx';
+import Final from './tutorial/01-useState/final/01-error-example.jsx';
 function App() {
   return (
     <div className='container'>
